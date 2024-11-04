@@ -116,19 +116,22 @@ public class SceneAttachment : MonoBehaviour
                 horizontal_rotation = 0.0f;
                 vertical_rotation = 0.0f;
                 cube_scale_z = -transform.localScale.z;
-                margin_z = -10.0f;
+                margin_z = -0.1f;
                 face_attachment_point = frontFaceAttachmentPoint;
                 break;
         }
 
         sceneRootObject = scene.GetRootGameObjects()[0].gameObject;
         sceneRootObject.transform.Rotate(0.0f, horizontal_rotation, vertical_rotation);
-
+        
         var cameraRootObject = scene.GetRootGameObjects()[1].gameObject;
-        cameraRootObject.SetActive(false);
 
-        sceneRootObject.transform.position = new Vector3((cube_scale_x / 2.0f), (cube_scale_y / 1.0f), (cube_scale_z / 2.0f));
+        print("new transform: " + new Vector3((cube_scale_x / 2.0f), (cube_scale_y / 1.0f), (cube_scale_z / 2.0f)));
+
+        sceneRootObject.transform.position = new Vector3((cube_scale_x / 2.0f), (cube_scale_y / 1.0f) + transform.position.y, (cube_scale_z / 2.0f) + margin_z);
         cameraRootObject.transform.position = new Vector3((cube_scale_x / 2.0f) + margin_x, (cube_scale_y / 1.0f) + margin_y, (cube_scale_z / 2.0f) + margin_z);
+
+        cameraRootObject.SetActive(false);
 
         sceneRootObject.transform.SetParent(face_attachment_point.transform);
     }

@@ -364,8 +364,8 @@ MonoBehaviour:
   smoothFactor: 6
   minValue: {x: -3.03, y: 0, z: -10}
   maxValue: {x: 23.8, y: 16.1, z: -10}
-  moveCamerTriggerValueRight: 0.5
-  moveCamerTriggerValueLeft: 0.3
+  moveCameraTriggerValueRight: 0.5
+  moveCameraTriggerValueLeft: 0.3
   setupComplete: 1
   ss: 0
 --- !u!114 &771925051

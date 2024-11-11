@@ -3,10 +3,10 @@
 *author: Sean Butler
 *author: Ahmad Alkadi
 *class: CS 4700 – Game Development
-*assignment: program 3
-*date last modified: 10/6/2024
+*assignment: Group project -  Rolling Knight
+*date last modified: 11/10/2024
 *
-*purpose: the camera will follow the player and it will have bounds to not allow him to leave out of the area
+*purpose: the camera will follow the player 
 *
 *References:
 *https://docs.unity3d.com/ScriptReference/index.html
@@ -30,9 +30,9 @@ public class CameraFollow : MonoBehaviour
     [HideInInspector]
     public Vector3 minValue, maxValue;
     [Range(0,1)]
-    public float moveCamerTriggerValueRight;
+    public float moveCameraTriggerValueRight;
     [Range(0, 1)]
-    public float moveCamerTriggerValueLeft;
+    public float moveCameraTriggerValueLeft;
 
     [HideInInspector]
     public bool setupComplete = false;
@@ -48,11 +48,11 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         var playerViewPortPos = Camera.main.WorldToViewportPoint(target.transform.position);
-        if ((playerViewPortPos.x >= moveCamerTriggerValueRight))
+        if ((playerViewPortPos.x >= moveCameraTriggerValueRight))
         {
             Follow();
         }
-        if ((playerViewPortPos.x <= moveCamerTriggerValueLeft))
+        if ((playerViewPortPos.x <= moveCameraTriggerValueLeft))
         {
             Follow();
         }
@@ -61,7 +61,6 @@ public class CameraFollow : MonoBehaviour
     void Follow()
     {      
         Vector3 targetPosition = target.position + offset;
-        //Debug.Log(targetPosition);
         //verify if the targetPosition is out of bound or not
         //Limit it to the min and max values
         //clap the value to its max and min
@@ -72,10 +71,6 @@ public class CameraFollow : MonoBehaviour
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, boundPosition, smoothFactor * Time.fixedDeltaTime);
         transform.position = smoothedPosition;
-        //Debug.Log(smoothedPosition.x);
-
-        //minValue.x = smoothedPosition.x;
-        //maxValue.x = smoothedPosition.x;
     }
 
     public void ResetValues()

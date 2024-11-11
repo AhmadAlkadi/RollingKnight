@@ -30,9 +30,7 @@ public class CameraFollow : MonoBehaviour
     [HideInInspector]
     public Vector3 minValue, maxValue;
     [Range(0,1)]
-    public float moveCameraTriggerValueRight;
-    [Range(0, 1)]
-    public float moveCameraTriggerValueLeft;
+    public float moveCameraTrigger;
 
     [HideInInspector]
     public bool setupComplete = false;
@@ -48,11 +46,11 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         var playerViewPortPos = Camera.main.WorldToViewportPoint(target.transform.position);
-        if ((playerViewPortPos.x >= moveCameraTriggerValueRight))
+        if ((playerViewPortPos.x >= moveCameraTrigger))
         {
             Follow();
         }
-        if ((playerViewPortPos.x <= moveCameraTriggerValueLeft))
+        else
         {
             Follow();
         }

@@ -513,12 +513,16 @@ PrefabInstance:
       value: forestground_0
       objectReference: {fileID: 0}
     - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
+      propertyPath: m_Size.x
+      value: 2498.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
       propertyPath: m_Size.y
-      value: 53
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
       propertyPath: m_AutoTiling
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -1053,12 +1057,16 @@ PrefabInstance:
       value: forestground_0 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
+      propertyPath: m_Size.x
+      value: 223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
       propertyPath: m_Size.y
-      value: 53
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
       propertyPath: m_AutoTiling
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7543463406975889577, guid: 157ba4519b19266418dfc6ae38a8e3a9, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x

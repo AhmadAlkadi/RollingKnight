@@ -3,22 +3,23 @@ using UnityEngine;
 
 public static class Extensions
 {
-    private static LayerMask layerMask = LayerMask.GetMask("Default");
-    public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction) {
-        if(rigidbody.isKinematic) {
+    private static LayerMask layerMask = LayerMask.GetMask("Ground");
+    public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction, float radius, float distance) {
+        if(rigidbody.bodyType == RigidbodyType2D.Kinematic) {
             return false;
         }
 
-        float radius = 0.2f;
-        float distance = 0.3f;
-
         RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction.normalized, distance, layerMask);
-        Debug.Log("rigidbody.position " + rigidbody.position);
-        Debug.Log("radius " + radius);
-        Debug.Log("distance " + distance);
-        Debug.Log("hit " + hit.collider != null && hit.rigidbody != rigidbody);
 
-        return hit.collider != null && hit.rigidbody != rigidbody;
+        
+        Debug.Log("rigidbody.position: " + rigidbody.position);
+        Debug.Log("direction: " + direction);
+        Debug.Log("radius: " + radius);
+        Debug.Log("distance: " + distance);
+        Debug.Log("hit: " + (hit.collider != null && hit.rigidbody != rigidbody).ToString());
+        
+
+        return (hit.collider != null && hit.rigidbody != rigidbody);
     }
 
     public static bool DotTest(this Transform transform, Transform other, Vector2 testDirection){

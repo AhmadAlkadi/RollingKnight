@@ -8,11 +8,15 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
     private new Rigidbody2D rigidbody;
 
-    public float moveSpeed = 8f;
-    public float maxJumpHeight = 5f;
-    public float maxJumpTime = 1f;
-    public float jumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f);
-    public float gravity => (-2f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2f),2);
+    public float castRadius = 0.25f;
+    public float castDistance = 1.52f;
+    public float moveSpeed = 8.0f;
+    public float moveFactor = 2.0f;
+    public float moveDampening = 0.9f;
+    public float maxJumpHeight = 5.0f;
+    public float maxJumpTime = 1.0f;
+    public float jumpForce => (2.0f * maxJumpHeight) / (maxJumpTime / 2.0f);
+    public float gravity => (-2.0f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2.0f), 2.0f);
     public bool grounded {get; private set;}
     public bool jumping {get; private set;}
     private void Awake() {
@@ -23,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update() {
 
         HorizontalMovement();
-        grounded = rigidbody.Raycast(Vector2.down);
+        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance);
 
         if(grounded) {
             GroundedMovement();
@@ -50,17 +54,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement() {
         inputAxis = Input.GetAxis("Horizontal");
-        velocity.x = Mathf.MoveTowards(velocity.x,inputAxis * moveSpeed,moveSpeed * Time.deltaTime);
+        float inputAxisDampening = Input.GetAxisRaw("Horizontal");
+        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * moveFactor * Time.deltaTime);
 
+        if (Mathf.Abs(inputAxisDampening) == 0.0f)
+        {
+            velocity.x *= moveDampening;
+        }
 
-        if(rigidbody.Raycast(Vector2.right * velocity.x)) {
+        if(rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistance)) {
             velocity.x = 0f;
         }
 
         if(velocity.x > 0f) {
-            transform.eulerAngles = Vector3.zero;
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
         } else if (velocity.x < 0f){
-            transform.eulerAngles = new Vector3(0f,180f,0f);
+            transform.eulerAngles = Vector3.zero;
         }
     }
 

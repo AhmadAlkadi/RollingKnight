@@ -19,7 +19,7 @@ public static class Extensions
         //Debug.Log("hit: " + (hit.collider != null && hit.rigidbody != rigidbody).ToString());
         
 
-        return (hit.collider != null && hit.rigidbody != rigidbody);
+        return hit.collider != null && hit.rigidbody != rigidbody;
     }
 
     public static bool DotTest(this Transform transform, Transform other, Vector2 testDirection){

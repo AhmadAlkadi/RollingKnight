@@ -8,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
     private new Rigidbody2D rigidbody;
 
-    public float castRadius = 0.25f;
-    public float castDistance = 1.52f;
+    
     public float moveSpeed = 8.0f;
     public float moveFactor = 2.0f;
     public float moveDampening = 0.9f;
@@ -30,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update() {
 
         HorizontalMovement();
-        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance);
+        grounded = rigidbody.Raycast(Vector2.down);
 
         if(grounded) {
             GroundedMovement();
@@ -65,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.x *= moveDampening;
         }
 
-        if(rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistance)) {
+        if(rigidbody.Raycast(Vector2.right * velocity.x)) {
             velocity.x = 0f;
         }
 

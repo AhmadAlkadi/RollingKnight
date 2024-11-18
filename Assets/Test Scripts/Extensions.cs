@@ -4,10 +4,13 @@ using UnityEngine;
 public static class Extensions
 {
     private static LayerMask layerMask = LayerMask.GetMask("Ground");
-    public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction, float radius, float distance) {
+    public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction) {
         if(rigidbody.bodyType == RigidbodyType2D.Kinematic) {
             return false;
         }
+
+        float radius = 0.25f;
+        float distance = 1.52f;
 
         RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction.normalized, distance, layerMask);
 

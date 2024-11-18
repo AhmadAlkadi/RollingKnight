@@ -227,16 +227,16 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 69153c9eec7da18429c01cb45c83a48a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &3384478293288511598
 CircleCollider2D:
@@ -248,7 +248,7 @@ CircleCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 69153c9eec7da18429c01cb45c83a48a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -286,7 +286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917b50d16dd4ca49abc230b8560f6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castRadius: 0.25
+  castDistance: 1.52
   moveSpeed: 8
+  moveFactor: 2
+  moveDampening: 0.9
+  maxJumpHeight: 5
+  maxJumpTime: 1
 --- !u!1 &8150929808711137936
 GameObject:
   m_ObjectHideFlags: 0

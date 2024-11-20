@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
     public bool jumping {get; private set;}
     //Boolean variable to track if the player is facing right
     public bool isFacingRight { get; private set; } = true;
-
+    public bool running => Mathf.Abs(velocity.x) > 0.25f || Mathf.Abs(inputAxis) > 0.25f;
+    public bool sliding => (inputAxis > 0f && velocity.y < 0f) || (inputAxis < 0f && velocity.y > 0f);
+    
     private void Awake() {
         rigidbody = GetComponent<Rigidbody2D>();
         camera = Camera.main;
@@ -68,10 +70,10 @@ public class PlayerMovement : MonoBehaviour
             velocity.x = 0f;
         }
 
-        if(velocity.x > 0f) {
+        if(velocity.x < 0f) {
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
             isFacingRight = true;
-        } else if (velocity.x < 0f){
+        } else if (velocity.x > 0f){
             transform.eulerAngles = Vector3.zero;
             isFacingRight = false;
         }

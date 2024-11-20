@@ -63,26 +63,29 @@ public class DeathAnimation: MonoBehaviour
                 yield return new WaitForSeconds(frameDuration); // Wait for the frame duration
             }
 
-            
-            
+            // Fade out the last sprite
+            if (currentFrame == deathSprites.Length - 1) {
+                spriteRenderer.sprite = deathSprites[deathSprites.Length - 1]; // Ensure the last frame is set
+
+                float fadeDuration = 1f; // Time it takes to fade out
+                float fadeElapsed = 0f;
+                Color spriteColor = spriteRenderer.color; // Preserve the original color
+
+                while (fadeElapsed < fadeDuration) {
+                    fadeElapsed += Time.deltaTime;
+                    float alpha = Mathf.Lerp(1f, 0f, fadeElapsed / fadeDuration); // Gradually reduce alpha
+                    spriteRenderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, alpha);
+                    yield return null; // Wait for the next frame
+                }
+
+                spriteRenderer.enabled = false; // Hide the sprite after fading out
+            }
+
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        if (deathSprites.Length > 0) {
-            float fadeDuration = 1f; // Duration of the fade-out
-            float fadeElapsed = 0f;
-            Color spriteColor = spriteRenderer.color; // Preserve original color
-
-            while (fadeElapsed < fadeDuration) {
-                fadeElapsed += Time.deltaTime;
-                float alpha = Mathf.Lerp(1f, 0f, fadeElapsed / fadeDuration); // Gradually reduce alpha
-                spriteRenderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, alpha);
-                yield return null; // Wait for the next frame
-            }
-
-            spriteRenderer.enabled = false; // Hide the sprite completely after fade-out
-    }
+        
 
 
     }

@@ -50,12 +50,12 @@ public class test_anim_and_particles : MonoBehaviour
             ballAudio.hasJumped = hasJumped;
         }
 
-        if (dustState != enablePSys[0])
+        if (dustState != enablePSys[0] && pSysDust)
         {
             dustState = enablePSys[0];
         }
 
-        if (fireState != enablePSys[1])
+        if (fireState != enablePSys[1] && pSysFire)
         {
             fireState = enablePSys[1];
 
@@ -69,7 +69,7 @@ public class test_anim_and_particles : MonoBehaviour
             }
         }
 
-        if (freezeState != enablePSys[2])
+        if (freezeState != enablePSys[2] && pSysFreeze)
         {
             freezeState = enablePSys[2];
 
@@ -91,11 +91,11 @@ public class test_anim_and_particles : MonoBehaviour
         if (Mathf.Abs(xInput) > 0.0f)
         {
             idleDir = Mathf.Sign(xInput);
-            pSysDust.transform.localPosition = new Vector3(
-                particleOffsetX * xInput,
-                pSysDust.transform.localPosition.y,
-                pSysDust.transform.localPosition.z
-            );
+
+            if (pSysDust)
+            {
+                pSysDust.transform.localPosition = new Vector3(particleOffsetX * xInput, pSysDust.transform.localPosition.y, pSysDust.transform.localPosition.z);
+            }
         }
 
         ballAudio.HandleWalkingSound();
@@ -136,7 +136,7 @@ public class test_anim_and_particles : MonoBehaviour
 
     public void OnJumpRoll()
     {
-        if (!isOnGround && dustState)
+        if ((!isOnGround && !hasJumped && pSysDust) || (!isOnGround && hasJumped) && dustState && pSysDust)
         {
             pSysDust.Play(true);
         }
@@ -149,7 +149,7 @@ public class test_anim_and_particles : MonoBehaviour
 
     public void OnFlatRoll()
     {
-        if (isOnGround && !hasJumped && dustState)
+        if (isOnGround && !hasJumped && dustState && pSysDust)
         {
             pSysDust.Play(true);
         }

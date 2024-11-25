@@ -1,3 +1,11 @@
+/**
+ * 
+ * example from:
+ * https://www.youtube.com/watch?v=yQiR2-0sbNw
+ * https://www.youtube.com/watch?app=desktop&v=s3jHsFA06Oo&t=0s
+ * 
+ */
+
 using UnityEngine;
 
 public class ChainPulley : MonoBehaviour

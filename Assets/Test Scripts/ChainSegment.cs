@@ -8,6 +8,11 @@ public class ChainSegment : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ResetAnchor();
+    }
+
+    public void ResetAnchor()
+    {
         connectedAbove = GetComponent<HingeJoint2D>().connectedBody.gameObject;
         ChainSegment above_segment = connectedAbove.GetComponent<ChainSegment>();
 

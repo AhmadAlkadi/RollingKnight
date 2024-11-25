@@ -10,6 +10,7 @@ public class HealthManager : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+
     public int Health {
         get {return health;}
         set {health = Mathf.Clamp(value,0,3);}

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    private HealthManager healthManager;
 
     public int world { get; private set; } = 1;
     public int stage { get; private set; } = 1;
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        //Access to HealthManager to get current player's health
+        healthManager = GetComponent<HealthManager>();
+
         if (Instance != null) {
             DestroyImmediate(gameObject);
         } else {
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        lives = 3;
+        healthManager.health = 3;
         LoadLevel(1, 1);
     }
 
@@ -52,9 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetLevel()
     {
-        lives--;
-
-        if (lives > 0) {
+        if (healthManager.health > 0) {
             LoadLevel(world, stage);
         } else {
             GameOver();

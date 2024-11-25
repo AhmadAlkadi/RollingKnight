@@ -5,6 +5,7 @@ public class TowerEntryExit : MonoBehaviour
 {
     public GameObject TowerOutside;
     public GameObject TowerOutsideDoorArchway;
+    public GameObject TowerOutsideDoorArchway2;
     public GameObject TowerInsideBack;
     public GameObject TowerInsideFront;
     public GameObject TowerMasking;
@@ -28,6 +29,9 @@ public class TowerEntryExit : MonoBehaviour
 
     [SerializeField]
     private Material matTowerOutsideDoorArchway;
+    
+    [SerializeField]
+    private Material matTowerOutsideDoorArchway2;
 
     [SerializeField]
     private Material matTowerMasking;
@@ -50,6 +54,7 @@ public class TowerEntryExit : MonoBehaviour
         towerInsideFrontColliders = TowerInsideFront.GetComponents<BoxCollider2D>();
         towerInsideBackColliders = TowerInsideBack.GetComponents<BoxCollider2D>();
         matTowerOutsideDoorArchway = TowerOutsideDoorArchway.GetComponent<TilemapRenderer>().material;
+        matTowerOutsideDoorArchway2 = TowerOutsideDoorArchway2.GetComponent<TilemapRenderer>().material;
         matTowerMasking = TowerMasking.GetComponent<TilemapRenderer>().material;
     }
 
@@ -101,6 +106,7 @@ public class TowerEntryExit : MonoBehaviour
             Color c = matTowerOutsideDoorArchway.color;
             c.a = alphaVisibilityOfArchway;
             matTowerOutsideDoorArchway.color = c;
+            matTowerOutsideDoorArchway2.color = c;
 
             Color c_masking = matTowerMasking.color;
             c_masking.a = alphaVisibilityOfMasking;
@@ -111,6 +117,7 @@ public class TowerEntryExit : MonoBehaviour
             Color c = matTowerOutsideDoorArchway.color;
             c.a = 1.0f;
             matTowerOutsideDoorArchway.color = c;
+            matTowerOutsideDoorArchway2.color = c;
 
             Color c_masking = matTowerMasking.color;
             c_masking.a = 0.0f;

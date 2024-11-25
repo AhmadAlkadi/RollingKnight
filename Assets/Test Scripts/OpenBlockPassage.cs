@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 public class OpenBlockPassage : MonoBehaviour
 {
     public GameObject blockPassage;
+    public bool forceTrigger;
 
     private Rigidbody2D blockPassageRB;
     private BoxCollider2D blockPassageCollider;
@@ -27,6 +28,11 @@ public class OpenBlockPassage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (forceTrigger)
+        {
+            isHit = forceTrigger;
+        }
+
         if (isHit)
         {
             blockPassageCollider.enabled = true;

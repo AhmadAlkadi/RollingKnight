@@ -2,7 +2,7 @@
 *file: Turret_Targeting.cs
 *author: Sean Butler
 *author: Ahmad Alkadi
-*class: CS 4700 – Game Development
+*class: CS 4700 ï¿½ Game Development
 *assignment: Group project -  Rolling Knight
 *date last modified: 11/10/2024
 *

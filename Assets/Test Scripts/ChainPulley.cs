@@ -54,29 +54,39 @@ public class ChainPulley : MonoBehaviour
 
     public void addLink()
     {
-        int index = Random.Range(0, prefabChainSegs.Length);
-        GameObject new_segment = Instantiate(prefabChainSegs[index]);
+        bool new_top_exists = (top && top.gameObject.GetComponent<ChainSegment>().connectedBelow != null);
 
-        new_segment.transform.parent = transform;
-        new_segment.transform.position = transform.position;
-        HingeJoint2D hj = new_segment.GetComponent<HingeJoint2D>();
-        hj.connectedBody = hook;
+        if (new_top_exists)
+        {
+            int index = Random.Range(0, prefabChainSegs.Length);
+            GameObject new_segment = Instantiate(prefabChainSegs[index]);
 
-        new_segment.GetComponent<ChainSegment>().connectedBelow = top.gameObject;
-        top.connectedBody = new_segment.GetComponent<Rigidbody2D>();
-        top.GetComponent<ChainSegment>().ResetAnchor();
+            new_segment.transform.parent = transform;
+            new_segment.transform.position = transform.position;
+            HingeJoint2D hj = new_segment.GetComponent<HingeJoint2D>();
+            hj.connectedBody = hook;
 
-        top = hj;
+            new_segment.GetComponent<ChainSegment>().connectedBelow = top.gameObject;
+            top.connectedBody = new_segment.GetComponent<Rigidbody2D>();
+            top.GetComponent<ChainSegment>().ResetAnchor();
+
+            top = hj;
+        }
     }
 
     public void removeLink()
     {
-        HingeJoint2D new_top = top.gameObject.GetComponent<ChainSegment>().connectedBelow.GetComponent<HingeJoint2D>();
-        new_top.connectedBody = hook;
-        new_top.gameObject.transform.position = hook.gameObject.transform.position;
-        new_top.GetComponent<ChainSegment>().ResetAnchor();
-        Destroy(top.gameObject);
-        top = new_top;
+        bool new_top_exists = top && (top.gameObject.GetComponent<ChainSegment>().connectedBelow != null);
+
+        if (new_top_exists)
+        {
+            HingeJoint2D new_top = top.gameObject.GetComponent<ChainSegment>().connectedBelow.GetComponent<HingeJoint2D>();
+            new_top.connectedBody = hook;
+            new_top.gameObject.transform.position = hook.gameObject.transform.position;
+            new_top.GetComponent<ChainSegment>().ResetAnchor();
+            Destroy(top.gameObject);
+            top = new_top;
+        }
     }
 
 }

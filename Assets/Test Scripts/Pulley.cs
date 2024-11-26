@@ -13,6 +13,9 @@ public class Pulley : MonoBehaviour
 {
     public GameObject mouseHoverObject;
     public ChainPulley pulleyObject;
+    public ChainPulley pulleyObject2;
+    float radius = 26.0f;
+
     Vector3 mousePosition;
     Vector2 mouseCenter;
     bool isCrankHovered = false;
@@ -32,9 +35,7 @@ public class Pulley : MonoBehaviour
         Vector2 mouseToButtonCenter = mousePosition - transform.position;
         float distance = mouseToButtonCenter.magnitude;
 
-        //print("distance: " + distance + " -- sprite.x: " + GetComponent<SpriteRenderer>().bounds.size.x * 26.0f);
-
-        if (distance <= (GetComponent<SpriteRenderer>().bounds.size.x * 26.0f))
+        if (distance <= (GetComponent<SpriteRenderer>().bounds.size.x * radius))
         {
             mouseHoverObject.SetActive(true);
             isCrankHovered = true;
@@ -48,11 +49,13 @@ public class Pulley : MonoBehaviour
         if (isCrankHovered && Input.GetMouseButtonDown(0))
         {
             pulleyObject.addLink();
+            pulleyObject2.removeLink();
         }
 
         if (isCrankHovered && Input.GetMouseButtonDown(1))
         {
             pulleyObject.removeLink();
+            pulleyObject2.addLink();
         }
     }
 }

@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6927785157894999631, guid: 0ab73eef03f04e249b1d1f34b41df393, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7470887257738387358, guid: 0ab73eef03f04e249b1d1f34b41df393, type: 3}
       propertyPath: pSysDust
       value: 
@@ -1421,25 +1425,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
   m_PrefabInstance: {fileID: 3068682657873218326}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1118457439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118457438}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ccc1948ff6544349b0b3aec4eb470b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1711655490}
-  deathSprites:
-  - {fileID: -2125877062115158154, guid: f36bc3e0668596246bc83db4346b760d, type: 3}
-  - {fileID: -8645154754116224514, guid: e958610de586594409a05b539aaf830e, type: 3}
-  - {fileID: -6999941850125377333, guid: 410f4718816be4b41878d58b249f4e61, type: 3}
-  - {fileID: -8121957796251350938, guid: 929f7b1d2c003db49a4f0aeb5c94f10e, type: 3}
-  frameDuration: 0.2
 --- !u!114 &1118457444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2877,6 +2862,30 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5649102579502915163, guid: 7e62c156339402e419b35338050103dd, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1711655490}
+    - target: {fileID: 5649102579502915163, guid: 7e62c156339402e419b35338050103dd, type: 3}
+      propertyPath: deathSprites.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5649102579502915163, guid: 7e62c156339402e419b35338050103dd, type: 3}
+      propertyPath: 'deathSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -2125877062115158154, guid: f36bc3e0668596246bc83db4346b760d, type: 3}
+    - target: {fileID: 5649102579502915163, guid: 7e62c156339402e419b35338050103dd, type: 3}
+      propertyPath: 'deathSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -8645154754116224514, guid: e958610de586594409a05b539aaf830e, type: 3}
+    - target: {fileID: 5649102579502915163, guid: 7e62c156339402e419b35338050103dd, type: 3}
+      propertyPath: 'deathSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: -6999941850125377333, guid: 410f4718816be4b41878d58b249f4e61, type: 3}
+    - target: {fileID: 5649102579502915163, guid: 7e62c156339402e419b35338050103dd, type: 3}
+      propertyPath: 'deathSprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: -8121957796251350938, guid: 929f7b1d2c003db49a4f0aeb5c94f10e, type: 3}
     - target: {fileID: 5671748859497150479, guid: 7e62c156339402e419b35338050103dd, type: 3}
       propertyPath: m_LocalScale.x
       value: 9.09705
@@ -2964,9 +2973,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1118457444}
-    - targetCorrespondingSourceObject: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1118457439}
     - targetCorrespondingSourceObject: {fileID: 3536200980073334691, guid: 7e62c156339402e419b35338050103dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 470235352}

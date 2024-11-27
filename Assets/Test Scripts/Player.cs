@@ -13,6 +13,8 @@ public class Player: MonoBehaviour
     private bool isVulnerable = true;
 
     private Coroutine knockbackRoutine;
+    private Coroutine blinkingCoroutine; // Reference to the blinking coroutine
+
 
     public bool normal => normalRenderer.enabled;
 
@@ -42,8 +44,9 @@ public class Player: MonoBehaviour
 
     public void Hit(Vector2 knockbackDirection, float knockbackForce) {
         if (isVulnerable) {
-            float knockbackDuration = 0.5f; // Adjust duration as needed
+            float knockbackDuration = 0.8f; // Adjust duration as needed
             Knockback(knockbackDirection, knockbackForce, knockbackDuration);
+            blinkingCoroutine = StartCoroutine(BlinkEffect(3f, 0.1f)); // Blink for 3 seconds with a 0.1-second interval
 
             healthManager.health--;
 
@@ -72,6 +75,8 @@ public class Player: MonoBehaviour
         if (knockbackRoutine != null) {
             StopCoroutine(knockbackRoutine);
             knockbackRoutine = null;
+            StopCoroutine(blinkingCoroutine);
+            blinkingCoroutine = null;
         }
         normalRenderer.enabled = false;
         deathAnimation.enabled = true;
@@ -118,6 +123,28 @@ public class Player: MonoBehaviour
             movement.enabled = true;
         }
     }
+
+    private IEnumerator BlinkEffect(float duration, float interval) {
+        SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        float elapsed = 0f;
+
+        while (elapsed < duration) {
+            elapsed += interval;
+
+            // Toggle visibility
+            foreach (SpriteRenderer sr in spriteRenderers) {
+                sr.enabled = !sr.enabled;
+            }
+
+            yield return new WaitForSeconds(interval);
+        }
+
+        // Ensure all sprites are visible at the end
+        foreach (SpriteRenderer sr in spriteRenderers) {
+            sr.enabled = true;
+        }
+    }
+
 
 
 

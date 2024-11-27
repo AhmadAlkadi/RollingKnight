@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7792713466023060002}
   - component: {fileID: 3706390020903137799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IceBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880573007203598362}
   - component: {fileID: 7575977190778381396}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,8 @@ GameObject:
   - component: {fileID: 9118317146254034344}
   - component: {fileID: 3384478293288511598}
   - component: {fileID: 5765450096337379208}
-  m_Layer: 0
+  - component: {fileID: 5649102579502915163}
+  m_Layer: 3
   m_Name: Ball
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -286,13 +287,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c917b50d16dd4ca49abc230b8560f6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castRadius: 0.25
-  castDistance: 1.52
   moveSpeed: 8
   moveFactor: 2
   moveDampening: 0.9
   maxJumpHeight: 5
   maxJumpTime: 1
+--- !u!114 &5649102579502915163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103677841181150032}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccc1948ff6544349b0b3aec4eb470b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
+  deathSprites:
+  - {fileID: -2125877062115158154, guid: f36bc3e0668596246bc83db4346b760d, type: 3}
+  - {fileID: -8645154754116224514, guid: e958610de586594409a05b539aaf830e, type: 3}
+  - {fileID: -6999941850125377333, guid: 410f4718816be4b41878d58b249f4e61, type: 3}
+  - {fileID: -8121957796251350938, guid: 929f7b1d2c003db49a4f0aeb5c94f10e, type: 3}
+  frameDuration: 0.2
 --- !u!1 &8150929808711137936
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671748859497150479}
   - component: {fileID: 528485092769087012}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

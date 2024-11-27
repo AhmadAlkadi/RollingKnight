@@ -11,7 +11,13 @@ public class Cat : MonoBehaviour
             if (collision.transform.DotTest(transform, Vector2.down)) {
                 Flatten();
             } else {
-                player.Hit();
+                // player.Hit();
+                // Calculate knockback direction
+                Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+                float knockbackForce = 10f; // Adjust this as needed
+
+                // Apply knockback and health reduction to the player
+                player.Hit(knockbackDirection, knockbackForce);
             }
         }
     }

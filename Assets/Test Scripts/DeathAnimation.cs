@@ -8,13 +8,24 @@ public class DeathAnimation: MonoBehaviour
     public float frameDuration = 0.2f;
 
     private void Reset() {
+        // SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+        // if (spriteRenderers == null) {
+        //     Debug.Log("There is no sprire renderer detected");
+        // }
+        // foreach (SpriteRenderer sr in spriteRenderers) {
+        //     if (sr.enabled) {
+        //         spriteRenderer = sr; // Assign the first active SpriteRenderer
+        //         Debug.Log("Found Something");
+        //         break;
+        //     }
         spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
+        
 
     private void OnEnable(){
         UpdateSprite();
         DisablePhysics();
+        DisableAnimator();
         StartCoroutine(Animate());
     }
 
@@ -45,6 +56,14 @@ public class DeathAnimation: MonoBehaviour
 
         if(entityMovement != null) {
             entityMovement.enabled = false;
+        }
+    }
+
+    private void DisableAnimator() {
+        Animator animator = GetComponentInChildren<Animator>();
+
+        if(animator != null) {
+            animator.enabled = false;
         }
     }
 

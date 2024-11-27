@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     public float gravity => (-2.0f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2.0f), 2.0f);
     public bool grounded {get; private set;}
     public bool jumping {get; private set;}
+    //Boolean variable to track if the player is facing right
+    public bool isFacingRight { get; private set; } = true;
+
     private void Awake() {
         rigidbody = GetComponent<Rigidbody2D>();
         camera = Camera.main;
@@ -68,8 +71,10 @@ public class PlayerMovement : MonoBehaviour
 
         if(velocity.x > 0f) {
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            isFacingRight = true;
         } else if (velocity.x < 0f){
             transform.eulerAngles = Vector3.zero;
+            isFacingRight = false;
         }
     }
 

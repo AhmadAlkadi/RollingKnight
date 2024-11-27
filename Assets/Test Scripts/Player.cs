@@ -78,6 +78,7 @@ public class Player: MonoBehaviour
             StopCoroutine(blinkingCoroutine);
             blinkingCoroutine = null;
         }
+
         normalRenderer.enabled = false;
         deathAnimation.enabled = true;
         GameManager.Instance.ResetLevel(3f);

@@ -7,6 +7,8 @@ public class DeathAnimation: MonoBehaviour
     public Sprite[] deathSprites;
     public float frameDuration = 0.2f;
 
+    private Rigidbody2D rb;
+
     private void Reset() {
         // SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         // if (spriteRenderers == null) {
@@ -19,6 +21,7 @@ public class DeathAnimation: MonoBehaviour
         //         break;
         //     }
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
     }
         
 
@@ -43,9 +46,13 @@ public class DeathAnimation: MonoBehaviour
             collider.enabled = false;
         }
 
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-        //GetComponent<PlayerMovement>().enabled = false;
-        //GetComponent<EntityMovement>().enabled = false;
+        //Stop any movements
+        rb = GetComponent<Rigidbody2D>();
+        if (rb != null) {
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+            rb.bodyType = RigidbodyType2D.Kinematic; // Prevent further physics interactions
+        }
 
         PlayerMovement playerMovement = GetComponent<PlayerMovement>();
         EntityMovement entityMovement = GetComponent<EntityMovement>();

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Audio
   - Grass
+  - Sand
+  - Snow
+  - Rock
   layers:
   - Default
   - TransparentFX

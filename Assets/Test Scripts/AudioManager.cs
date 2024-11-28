@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     // Singleton instance
     public static AudioManager Instance { get; private set; }
+    [Range(0.0f, 1.0f)]
+    public float volume = 1.0f;
 
     [Header("Audio Sources")]
     [SerializeField] private AudioSource musicSource;
@@ -55,6 +57,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        musicSource.volume = volume;
+
         // Initialize dictionaries for walking and rolling sounds
         walkingSounds = new Dictionary<string, AudioClip>
         {

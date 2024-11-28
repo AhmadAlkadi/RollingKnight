@@ -98,6 +98,7 @@ public class test_anim_and_particles : MonoBehaviour
 
         isOnGround = colliderGround.IsTouchingLayers();
         mAnim.SetBool("isOnGround", isOnGround);
+        mAnim.SetFloat("upVelocity", body.linearVelocity.y);
 
         float jump_value = 0.0f;
 
@@ -117,7 +118,7 @@ public class test_anim_and_particles : MonoBehaviour
     {
         if ((!isOnGround && !hasJumped) || (!isOnGround && hasJumped) && dustState)
         {
-            pSysDust.Play(true);
+            //pSysDust.Play(true);
         }
     }
 

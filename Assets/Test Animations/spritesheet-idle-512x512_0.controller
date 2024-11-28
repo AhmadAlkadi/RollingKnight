@@ -127,26 +127,42 @@ BlendTree:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 7041a19ce34aefb47b9db0b3d5099423, type: 2}
     m_Threshold: -1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_Position: {x: -1, y: 1}
+    m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: moveX
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 76531a8506f147a499579d9c10b55d2c, type: 2}
     m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_Position: {x: 1, y: 1}
+    m_TimeScale: 2
+    m_CycleOffset: 0
+    m_DirectBlendParameter: moveX
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 5a1003d348ace3f47bcea05c374dabc4, type: 2}
+    m_Threshold: 3
+    m_Position: {x: 1, y: -1}
+    m_TimeScale: 0.5
+    m_CycleOffset: 0
+    m_DirectBlendParameter: moveX
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 49dc706f4cb62394ebb74598be138b8d, type: 2}
+    m_Threshold: 5
+    m_Position: {x: -1, y: -1}
+    m_TimeScale: 0.5
     m_CycleOffset: 0
     m_DirectBlendParameter: moveX
     m_Mirror: 0
   m_BlendParameter: moveX
-  m_BlendParameterY: moveX
+  m_BlendParameterY: upVelocity
   m_MinThreshold: -1
-  m_MaxThreshold: 1
+  m_MaxThreshold: 5
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
-  m_BlendType: 0
+  m_BlendType: 1
 --- !u!1101 &-2646186206731852691
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -194,7 +210,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: -3238442258924452004}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: moveX
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -263,6 +279,12 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: isFacingRight
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: upVelocity
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -602,7 +624,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attack
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: moveX
+    m_ConditionEvent: idleDir
     m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8629042442959490095}
@@ -740,7 +762,7 @@ AnimatorStateTransition:
     m_ConditionEvent: Attack
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: moveX
+    m_ConditionEvent: idleDir
     m_EventTreshold: 0.1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5831271114547900562}

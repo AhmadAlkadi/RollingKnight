@@ -21,9 +21,11 @@ public class PlayerAttack : MonoBehaviour
     // Function to trigger the attack animation
     private void TriggerAttack()
     {
-        float moveX = animator.GetFloat("moveX");
+        
+        //float moveX = animator.GetFloat("moveX");
         animator.SetTrigger("Attack");
 
+        /*
         if (moveX == 1) // Facing right
         {
             animator.SetTrigger(attackRightAnimation);
@@ -32,5 +34,7 @@ public class PlayerAttack : MonoBehaviour
         {
             animator.SetTrigger(attackLeftAnimation);
         }
+        */
+
     }
 }

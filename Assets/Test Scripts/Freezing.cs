@@ -19,7 +19,7 @@ public class Freezing : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 3)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
@@ -46,12 +46,14 @@ public class Freezing : MonoBehaviour
                     m_Rigidbody = gameObject.GetComponentInParent<Rigidbody2D>();
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    if(gameObject.transform.GetChild(3) != null)
+                        gameObject.transform.GetChild(3).gameObject.SetActive(false);
                     child.SetActive(true);
                 }
             }
         }
 
-        if (collision.gameObject.layer == 8)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
@@ -73,6 +75,8 @@ public class Freezing : MonoBehaviour
                     m_Rigidbody = gameObject.GetComponentInParent<Rigidbody2D>();
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    if (gameObject.transform.GetChild(3) != null)
+                        gameObject.transform.GetChild(3).gameObject.SetActive(false);
                     child.SetActive(true);
                 }
             }

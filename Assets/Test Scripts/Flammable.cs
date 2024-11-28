@@ -38,6 +38,26 @@ public class flammable : MonoBehaviour
                 }
             }
         }
+
+        if (collision.gameObject.layer == 8)
+        {
+            GameObject child = gameObject.transform.GetChild(0).gameObject;
+            PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
+            TurretBullet TurrentElemnt = collision.gameObject.GetComponent<TurretBullet>();
+            if (TurrentElemnt != null)
+            {
+                child.SetActive(true);
+                Invoke(nameof(setInActive), timeToVanish);
+            }
+            if (currentElement != null)
+            {
+                if (currentElement.GetIntELEMENT_TYPE() == 1)
+                {
+                    child.SetActive(true);
+                    Invoke(nameof(setInActive), timeToVanish);
+                }
+            }
+        }
     }
 
     public void setInActive()

@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7792713466023060002}
   - component: {fileID: 3706390020903137799}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: IceBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880573007203598362}
   - component: {fileID: 7575977190778381396}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,8 @@ GameObject:
   - component: {fileID: 9118317146254034344}
   - component: {fileID: 3384478293288511598}
   - component: {fileID: 5765450096337379208}
-  m_Layer: 0
+  - component: {fileID: 5936342907738211846}
+  m_Layer: 3
   m_Name: Ball
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -381,6 +382,20 @@ MonoBehaviour:
   moveDampening: 0.9
   maxJumpHeight: 5
   maxJumpTime: 1
+--- !u!114 &5936342907738211846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8103677841181150032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69af3f04b7838934c8c640497a641448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentElementType: 0
+  elementTimeToVanishs: 10
 --- !u!1 &8150929808711137936
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5671748859497150479}
   - component: {fileID: 528485092769087012}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

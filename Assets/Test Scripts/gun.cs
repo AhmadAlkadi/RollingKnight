@@ -86,11 +86,11 @@ public class gun : MonoBehaviour
         for (int i=0; i<numberOfBullets; i++)
         {
             var newBullet = Instantiate(turret_bullet);
-            newBullet.gameObject.layer = LayerMask.NameToLayer("Player");
+            newBullet.gameObject.layer = LayerMask.NameToLayer("Bullet");
             pBullets.Add(newBullet);
 
             var bulletChild = newBullet.transform.GetChild(0).gameObject.GetComponent<TurretBullet>();
-            bulletChild.gameObject.layer = LayerMask.NameToLayer("Player");
+            bulletChild.gameObject.layer = LayerMask.NameToLayer("Bullet");
             bulletChild.gameObject.GetComponent<CircleCollider2D>().excludeLayers |= (1 << LayerMask.NameToLayer("Player")) ;
             bullets.Add(bulletChild);
         }

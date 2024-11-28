@@ -172,54 +172,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3536200980073334691, guid: 7e62c156339402e419b35338050103dd, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6732899268981944373, guid: 7e62c156339402e419b35338050103dd, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8150929808711137936, guid: 7e62c156339402e419b35338050103dd, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 808888717}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e62c156339402e419b35338050103dd, type: 3}
---- !u!1 &808888712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8103677841181150032, guid: 7e62c156339402e419b35338050103dd, type: 3}
-  m_PrefabInstance: {fileID: 696017971}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &808888717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808888712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69af3f04b7838934c8c640497a641448, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentElementType: 0
-  attackCoolDownFlame: 0.35
-  fireRate: 10
 --- !u!1 &1605118185
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,11 +585,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2058650146111928873, guid: e4beb0a73077f9346a1bc6e96823a8e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.97
+      value: -3.2513
       objectReference: {fileID: 0}
     - target: {fileID: 2058650146111928873, guid: e4beb0a73077f9346a1bc6e96823a8e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.624
+      value: -3.641
       objectReference: {fileID: 0}
     - target: {fileID: 2058650146111928873, guid: e4beb0a73077f9346a1bc6e96823a8e7, type: 3}
       propertyPath: m_LocalPosition.z

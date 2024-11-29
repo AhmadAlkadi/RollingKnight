@@ -1,5 +1,4 @@
 using UnityEngine;
-
 using System.Collections.Generic;
 
 public class test_anim_and_particles : MonoBehaviour
@@ -9,40 +8,48 @@ public class test_anim_and_particles : MonoBehaviour
     public float particleOffsetX = 0.0f;
     public bool isOnGround = false;
     public bool hasJumped = false;
+
     [SerializeField] public ParticleSystem pSysDust;
     [SerializeField] public ParticleSystem pSysFire;
     [SerializeField] public ParticleSystem pSysFreeze;
     [SerializeField] public List<bool> enablePSys;
 
+    public AudioManager audioManager;
+
     private float idleDir = -1.0f;
-    private Vector2 movement;
     private Vector2 moveDirection;
     private Rigidbody2D body;
     private bool dustState = true;
     private bool fireState = false;
     private bool freezeState = false;
-    
+
     private Collider2D colliderGround;
 
     private float xInput = 0.0f;
-    private float yInput = 0.0f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private BallAudio ballAudio;
+
     void Start()
     {
-        enablePSys = new List<bool>(3);
-        enablePSys.Add(true);
-        enablePSys.Add(false);
-        enablePSys.Add(false);
+        ballAudio = new BallAudio();
+        enablePSys = new List<bool>(3) { true, false, false };
 
         mAnim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         colliderGround = GetComponentInChildren<Collider2D>();
+        ballAudio.Start(colliderGround, audioManager);
     }
 
-    // Update is called once per frame
     void Update()
     {
+        xInput = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            hasJumped = true;
+            ballAudio.hasJumped = hasJumped;
+        }
+
         if (dustState != enablePSys[0])
         {
             dustState = enablePSys[0];
@@ -77,49 +84,61 @@ public class test_anim_and_particles : MonoBehaviour
         }
 
         mAnim.SetFloat("moveX", moveDirection.x);
-        mAnim.SetFloat("moveY", moveDirection.y);
+        mAnim.SetFloat("moveY", 0.0f);
         mAnim.SetFloat("moveMag", Mathf.Abs(moveDirection.x));
         mAnim.SetFloat("idleDir", idleDir);
-        
 
         if (Mathf.Abs(xInput) > 0.0f)
         {
             idleDir = Mathf.Sign(xInput);
-            pSysDust.transform.localPosition = new Vector3(particleOffsetX * xInput, pSysDust.transform.localPosition.y, pSysDust.transform.localPosition.z);
+            pSysDust.transform.localPosition = new Vector3(
+                particleOffsetX * xInput,
+                pSysDust.transform.localPosition.y,
+                pSysDust.transform.localPosition.z
+            );
         }
 
+        ballAudio.HandleWalkingSound();
     }
 
     private void FixedUpdate()
     {
-        xInput = Input.GetAxisRaw("Horizontal");
-        yInput = Input.GetAxisRaw("Vertical");
-        hasJumped = Input.GetKey(KeyCode.Space);
-
         isOnGround = colliderGround.IsTouchingLayers();
         mAnim.SetBool("isOnGround", isOnGround);
         mAnim.SetFloat("upVelocity", body.linearVelocity.y);
 
-        float jump_value = 0.0f;
+        ballAudio.isOnGround = isOnGround;
+        ballAudio.AudioUpdate(body.linearVelocity);
 
-        if (isOnGround && hasJumped)
+        if (hasJumped && isOnGround)
         {
-            jump_value = 20.0f;
-            hasJumped = false;
+            // Apply jump force using AddForce with Impulse mode
+            float jump_value = 30.0f;
+            body.AddForce(new Vector2(0, jump_value), ForceMode2D.Impulse);
+
+            hasJumped = false;   
         }
 
-        moveDirection = new Vector2(Mathf.Abs(xInput) > 0.0f ? Mathf.Sign(xInput) : 0.0f, Mathf.Abs(yInput) > 0.0f ? Mathf.Sign(yInput) : 0.0f).normalized;
+        // Handle horizontal movement
+        moveDirection = new Vector2(Mathf.Abs(xInput) > 0.0f ? Mathf.Sign(xInput) : 0.0f, 0.0f);
 
-        movement = new Vector2(moveDirection.x * speed, body.linearVelocity.y + jump_value);
-        body.linearVelocity = movement;
+        float horizontalVelocity = moveDirection.x * speed;
+        body.linearVelocity = new Vector2(horizontalVelocity, body.linearVelocity.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        ballAudio.OnCollisionSounds(collision);
     }
 
     public void OnJumpRoll()
     {
-        if ((!isOnGround && !hasJumped) || (!isOnGround && hasJumped) && dustState)
+        if (!isOnGround && dustState)
         {
-            //pSysDust.Play(true);
+            pSysDust.Play(true);
         }
+
+        ballAudio.OnJumpRollSound();
     }
 
     public void OnFlatRoll()
@@ -128,5 +147,7 @@ public class test_anim_and_particles : MonoBehaviour
         {
             pSysDust.Play(true);
         }
+
+        ballAudio.OnFlatRollSound();
     }
 }

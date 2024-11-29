@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     public float moveDampening = 0.9f;
     public float maxJumpHeight = 5.0f;
     public float maxJumpTime = 1.0f;
+    public float castRadius = 0.25f;
+    public float castDistance = 1.6f;
     public float jumpForce => (2.0f * maxJumpHeight) / (maxJumpTime / 2.0f);
     public float gravity => (-2.0f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2.0f), 2.0f);
     public bool grounded {get; private set;}
@@ -31,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update() {
 
         HorizontalMovement();
-        grounded = rigidbody.Raycast(Vector2.down);
+        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance);
 
         if(grounded) {
             GroundedMovement();
@@ -66,14 +68,14 @@ public class PlayerMovement : MonoBehaviour
             velocity.x *= moveDampening;
         }
 
-        if(rigidbody.Raycast(Vector2.right * velocity.x)) {
+        if(rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistance)) {
             velocity.x = 0f;
         }
 
-        if(velocity.x < 0f) {
+        if(velocity.x > 0f) {
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
             isFacingRight = true;
-        } else if (velocity.x > 0f){
+        } else if (velocity.x < 0f){
             transform.eulerAngles = Vector3.zero;
             isFacingRight = false;
         }

@@ -5,6 +5,8 @@ public class EntityMovement : MonoBehaviour
 {
     public float speed = 1f;
     public Vector2 direction = Vector2.left;
+    public float castRadius = 0.25f;
+    public float castDistance = 1.57f;
 
     private Rigidbody2D rb;
     private Vector2 velocity;
@@ -43,11 +45,11 @@ public class EntityMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
 
-        if (rb.Raycast(direction)) {
+        if (rb.Raycast(direction, castRadius, castDistance)) {
             direction = -direction;
         }
 
-        if (rb.Raycast(Vector2.down)) {
+        if (rb.Raycast(Vector2.down, castRadius, castDistance)) {
             velocity.y = Mathf.Max(velocity.y, 0f);
         }
 

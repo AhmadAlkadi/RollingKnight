@@ -37,6 +37,7 @@ public class gun : MonoBehaviour
     public float spreadShotDirection = 1.0f;
     public bool allowRapidFire = false;
     public bool forceWeapon = false;
+    private float idleDir = -1.0f;
 
     public GameObject[] bulletObjects { get; private set; }
     public int numberOfBullets = 20;
@@ -99,24 +100,26 @@ public class gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float yInput = Input.GetAxis("Vertical") != 0.0f ? Mathf.Sign(Input.GetAxis("Vertical")) : 0.0f;
-        float xInput = Input.GetAxis("Horizontal") != 0.0f ? Mathf.Sign(Input.GetAxis("Horizontal")) : 0.0f;
+        float yInput = Input.GetAxisRaw("Vertical");
+        float xInput = Input.GetAxisRaw("Horizontal");
 
         gunDirection = new Vector3(xInput, yInput, 0.0f);
 
+        Debug.Log(gunDirection);
+
+        if (Mathf.Abs(xInput) > 0.0f)
+        {
+            idleDir = Mathf.Sign(xInput);
+        }
+        Vector3 normGunDirection = gunDirection.normalized;
+
         if (gunDirection == Vector3.zero)
         {
-            gunDirection = shootLocation.transform.position - transform.position;
+            normGunDirection.x =  idleDir;
         }
-
-        Vector3 normGunDirection = gunDirection.normalized;
 
         Vector3 shoot_direction = transform.position - shootLocation.transform.position;
         shoot_direction.Normalize();
-
-        float playerScaleX = playerDirection.transform.eulerAngles.y;
-
-        transform.eulerAngles = new Vector3(0.0f, playerScaleX, 0.0f);
 
         if (Input.GetKey(KeyCode.K) && (cooldownTimer > attackCoolDown))
         {

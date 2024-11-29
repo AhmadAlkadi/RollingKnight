@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 64d899a4cc409a34bb8cc1330e76ac1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7011178478444374616
+    second: crow_attacking_transparent_0
+  - first:
+      213: -3308716862352419051
+    second: crow_attacking_transparent_1
+  - first:
+      213: -436839738213940160
+    second: crow_attacking_transparent_2
+  - first:
+      213: 9064709584258360756
+    second: crow_attacking_transparent_3
+  - first:
+      213: -7378437025738090916
+    second: crow_attacking_transparent_4
+  - first:
+      213: -5444699434198447425
+    second: crow_attacking_transparent_5
+  - first:
+      213: 2733433049429141501
+    second: crow_attacking_transparent_6
+  - first:
+      213: 7695401079793988163
+    second: crow_attacking_transparent_7
+  - first:
+      213: -6448835658667224200
+    second: crow_attacking_transparent_8
+  - first:
+      213: -3980457203990138640
+    second: crow_attacking_transparent_9
+  - first:
+      213: 6011415182298669050
+    second: crow_attacking_transparent_10
+  - first:
+      213: -6040271545240859947
+    second: crow_attacking_transparent_11
+  - first:
+      213: -5954846898600246634
+    second: crow_attacking_transparent_12
+  - first:
+      213: 124265141660008494
+    second: crow_attacking_transparent_13
+  - first:
+      213: -2321537370452234514
+    second: crow_attacking_transparent_14
+  - first:
+      213: -6091218589261474897
+    second: crow_attacking_transparent_15
+  - first:
+      213: -6015133925065892219
+    second: crow_attacking_transparent_16
+  - first:
+      213: -7026547984964899110
+    second: crow_attacking_transparent_17
+  - first:
+      213: 1727766248153036140
+    second: crow_attacking_transparent_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crow_attacking_transparent_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1396
+        width: 372
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a59577125a43be90800000000000000
+      internalID: -7011178478444374616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_1
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 1632
+        width: 21
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51793254b831512d0800000000000000
+      internalID: -3308716862352419051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_2
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 1458
+        width: 444
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044cbf3929800f9f0800000000000000
+      internalID: -436839738213940160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_3
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 1488
+        width: 397
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b56cc907515ccd70800000000000000
+      internalID: 9064709584258360756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_4
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 1494
+        width: 426
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c569a432e968a9990800000000000000
+      internalID: -7378437025738090916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_5
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 1489
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbac4db36ba8074b0800000000000000
+      internalID: -5444699434198447425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_6
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1492
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7698840ea1fe520800000000000000
+      internalID: 2733433049429141501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_7
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1494
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3423745928e8bca60800000000000000
+      internalID: 7695401079793988163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_8
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1501
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8739446c2222186a0800000000000000
+      internalID: -6448835658667224200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_9
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 1486
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0f588234392c8c0800000000000000
+      internalID: -3980457203990138640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_10
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 1481
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff5d4a2246dc6350800000000000000
+      internalID: 6011415182298669050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_11
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 906
+        width: 342
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dac4074805ac2ca0800000000000000
+      internalID: -6040271545240859947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_12
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 1213
+        width: 39
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692881dbb422c5da0800000000000000
+      internalID: -5954846898600246634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_13
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 910
+        width: 363
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20cb9aec7a79b100800000000000000
+      internalID: 124265141660008494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_14
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1070
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eee6665cf0e38cfd0800000000000000
+      internalID: -2321537370452234514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_15
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 934
+        width: 303
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa350d937f4a77ba0800000000000000
+      internalID: -6091218589261474897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_16
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 920
+        width: 371
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58edb009093f58ca0800000000000000
+      internalID: -6015133925065892219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_17
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 1061
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade2eeef5dfac7e90800000000000000
+      internalID: -7026547984964899110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crow_attacking_transparent_18
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 905
+        width: 109
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c653214af324af710800000000000000
+      internalID: 1727766248153036140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      crow_attacking_transparent_0: -7011178478444374616
+      crow_attacking_transparent_1: -3308716862352419051
+      crow_attacking_transparent_10: 6011415182298669050
+      crow_attacking_transparent_11: -6040271545240859947
+      crow_attacking_transparent_12: -5954846898600246634
+      crow_attacking_transparent_13: 124265141660008494
+      crow_attacking_transparent_14: -2321537370452234514
+      crow_attacking_transparent_15: -6091218589261474897
+      crow_attacking_transparent_16: -6015133925065892219
+      crow_attacking_transparent_17: -7026547984964899110
+      crow_attacking_transparent_18: 1727766248153036140
+      crow_attacking_transparent_2: -436839738213940160
+      crow_attacking_transparent_3: 9064709584258360756
+      crow_attacking_transparent_4: -7378437025738090916
+      crow_attacking_transparent_5: -5444699434198447425
+      crow_attacking_transparent_6: 2733433049429141501
+      crow_attacking_transparent_7: 7695401079793988163
+      crow_attacking_transparent_8: -6448835658667224200
+      crow_attacking_transparent_9: -3980457203990138640
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

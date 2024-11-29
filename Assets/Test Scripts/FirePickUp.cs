@@ -27,7 +27,7 @@ public class FirePickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 3)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             isTouchingPowerUp = true;
             fireElement(collision);
@@ -42,21 +42,24 @@ public class FirePickUp : MonoBehaviour
     private void fireElement(Collider2D collision)
     {
         PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
-        gun currentGun = collision.gameObject.GetComponentInChildren<gun>();
-        playerElement = currentElement;
-        playergun = currentGun;
-        currentElement.SetElement(PlayerElement.ELEMENT_TYPE.FIRE);
-        currentGun.SetGun(gun.GUN_TYPE.FLAME);
-
-        if (isTouchingPowerUp == true)
+        if (currentElement != null)
         {
-            currentPower = PlayerElement.ELEMENT_TYPE.FIRE;
-            gunType = gun.GUN_TYPE.FLAME;
-        }
+            gun currentGun = collision.gameObject.GetComponentInChildren<gun>();
+            playerElement = currentElement;
+            playergun = currentGun;
+            currentElement.SetElement(PlayerElement.ELEMENT_TYPE.FIRE);
+            currentGun.SetGun(gun.GUN_TYPE.FLAME);
 
-        if (destroyOnTouch == true)
-        {
-            gameObject.SetActive(false);
+            if (isTouchingPowerUp == true)
+            {
+                currentPower = PlayerElement.ELEMENT_TYPE.FIRE;
+                gunType = gun.GUN_TYPE.FLAME;
+            }
+
+            if (destroyOnTouch == true)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

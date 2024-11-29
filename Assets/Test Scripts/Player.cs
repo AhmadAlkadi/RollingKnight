@@ -5,6 +5,12 @@ using UnityEditor.Callbacks;
 public class Player: MonoBehaviour
 {
     public PlayerSpriteRenderer normalRenderer;
+    public float invulnerableTimeSeconds = 3.0f;
+    public float knockBackDuration = 0.8f;
+    public float blinkDurationSeconds = 3.0f;
+    public float blinkIntervalSeconds = 0.1f;
+    public float resetLevelDelaySeconds = 3.0f;
+
     private HealthManager healthManager;
 
     private DeathAnimation deathAnimation;
@@ -15,10 +21,9 @@ public class Player: MonoBehaviour
     private Coroutine knockbackRoutine;
     private Coroutine blinkingCoroutine; // Reference to the blinking coroutine
 
-
     public bool normal => normalRenderer.enabled;
 
-    private void Awake(){
+    private void Awake() {
         deathAnimation = GetComponent<DeathAnimation>();
         playerMovement = GetComponent<PlayerMovement>();
         if(GameManager.Instance != null) {
@@ -30,23 +35,11 @@ public class Player: MonoBehaviour
             Debug.LogError("HealthManager component not found on GameManager!");
         }
     }
-    // public void Hit(){
-    //     if(isVulnerable) {
-    //         healthManager.health--;
-    //         if(healthManager.health <= 0) {
-    //             Death();
-    //         }else {
-    //             StartCoroutine(GetHurt());
-    //         }
-    //     }
-        
-    // }
 
     public void Hit(Vector2 knockbackDirection, float knockbackForce) {
         if (isVulnerable) {
-            float knockbackDuration = 0.8f; // Adjust duration as needed
-            Knockback(knockbackDirection, knockbackForce, knockbackDuration);
-            blinkingCoroutine = StartCoroutine(BlinkEffect(3f, 0.1f)); // Blink for 3 seconds with a 0.1-second interval
+            Knockback(knockbackDirection, knockbackForce, knockBackDuration);
+            blinkingCoroutine = StartCoroutine(BlinkEffect(blinkDurationSeconds, blinkIntervalSeconds));
 
             healthManager.health--;
 
@@ -58,16 +51,16 @@ public class Player: MonoBehaviour
         }
     }
 
+    IEnumerator GetHurt() {
+        var player_mask = LayerMask.NameToLayer("Player");
+        var enemy_mask = LayerMask.NameToLayer("Enemy");
 
-    IEnumerator GetHurt(){
-        //Layer 3: Player
-        //Layer 8: Enemy
         //Enable ignore collision
         isVulnerable = false;
-        Physics2D.IgnoreLayerCollision(3,8,true);
-        yield return new WaitForSeconds(3);
+        Physics2D.IgnoreLayerCollision(player_mask, enemy_mask, true);
+        yield return new WaitForSeconds(invulnerableTimeSeconds);
         //Disable ignore collision
-        Physics2D.IgnoreLayerCollision(3,8,false);
+        Physics2D.IgnoreLayerCollision(player_mask, enemy_mask, false);
         isVulnerable = true;
     }
 
@@ -81,7 +74,7 @@ public class Player: MonoBehaviour
 
         normalRenderer.enabled = false;
         deathAnimation.enabled = true;
-        GameManager.Instance.ResetLevel(3f);
+        GameManager.Instance.ResetLevel(resetLevelDelaySeconds);
     }
 
     public void Knockback(Vector2 direction, float force, float duration) {
@@ -145,13 +138,4 @@ public class Player: MonoBehaviour
             sr.enabled = true;
         }
     }
-
-
-
-
-
-
-
-
-
 }

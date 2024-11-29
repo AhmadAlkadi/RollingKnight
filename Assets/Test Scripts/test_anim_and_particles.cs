@@ -8,6 +8,7 @@ public class test_anim_and_particles : MonoBehaviour
     public float particleOffsetX = 0.0f;
     public bool isOnGround = false;
     public bool hasJumped = false;
+    public float jumpForce = 30.0f;
 
     [SerializeField] public ParticleSystem pSysDust;
     [SerializeField] public ParticleSystem pSysFire;
@@ -113,8 +114,7 @@ public class test_anim_and_particles : MonoBehaviour
         if (hasJumped && isOnGround)
         {
             // Apply jump force using AddForce with Impulse mode
-            float jump_value = 30.0f;
-            body.AddForce(new Vector2(0, jump_value), ForceMode2D.Impulse);
+            body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
             hasJumped = false;   
         }

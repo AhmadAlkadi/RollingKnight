@@ -2,10 +2,7 @@ using UnityEngine;
 
 public class SideScrolling : MonoBehaviour
 {
-    private Transform player;
-    private void Awake() {
-        player = GameObject.FindWithTag("Player").transform;
-    }
+    public Transform player;
 
     private void LateUpdate() {
         Vector3 cameraPosition = transform.position;

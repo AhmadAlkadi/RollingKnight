@@ -128,7 +128,10 @@ public class test_anim_and_particles : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ballAudio.OnCollisionSounds(collision);
+        if (ballAudio != null)
+        {
+            ballAudio.OnCollisionSounds(collision);
+        }
     }
 
     public void OnJumpRoll()
@@ -138,7 +141,10 @@ public class test_anim_and_particles : MonoBehaviour
             pSysDust.Play(true);
         }
 
-        ballAudio.OnJumpRollSound();
+        if (ballAudio != null)
+        {
+            ballAudio.OnJumpRollSound();
+        }
     }
 
     public void OnFlatRoll()
@@ -148,6 +154,9 @@ public class test_anim_and_particles : MonoBehaviour
             pSysDust.Play(true);
         }
 
-        ballAudio.OnFlatRollSound();
+        if (ballAudio != null)
+        {
+            ballAudio.OnFlatRollSound();
+        }
     }
 }

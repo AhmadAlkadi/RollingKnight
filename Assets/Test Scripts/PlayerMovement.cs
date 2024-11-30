@@ -8,20 +8,23 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 velocity;
     private new Rigidbody2D rigidbody;
 
-    public float castRadius = 0.25f;
-    public float castDistance = 1.52f;
+    
     public float moveSpeed = 8.0f;
     public float moveFactor = 2.0f;
     public float moveDampening = 0.9f;
     public float maxJumpHeight = 5.0f;
     public float maxJumpTime = 1.0f;
+    public float castRadius = 0.25f;
+    public float castDistance = 1.6f;
     public float jumpForce => (2.0f * maxJumpHeight) / (maxJumpTime / 2.0f);
     public float gravity => (-2.0f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2.0f), 2.0f);
     public bool grounded {get; private set;}
     public bool jumping {get; private set;}
     //Boolean variable to track if the player is facing right
     public bool isFacingRight { get; private set; } = true;
-
+    public bool running => Mathf.Abs(velocity.x) > 0.25f || Mathf.Abs(inputAxis) > 0.25f;
+    public bool sliding => (inputAxis > 0f && velocity.y < 0f) || (inputAxis < 0f && velocity.y > 0f);
+    
     private void Awake() {
         rigidbody = GetComponent<Rigidbody2D>();
         camera = Camera.main;
@@ -85,5 +88,13 @@ public class PlayerMovement : MonoBehaviour
         Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width,Screen.height));
         position.x = Mathf.Clamp(position.x,leftEdge.x + 0.8f,rightEdge.x - 0.5f);
         rigidbody.MovePosition(position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision ) {
+        if(collision.gameObject.layer != LayerMask.NameToLayer("PowerUp")) {
+            if(transform.DotTest(collision.transform, Vector2.up)) {
+                velocity.y = 0f;
+            }
+        }
     }
 }

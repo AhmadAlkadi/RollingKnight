@@ -5748,6 +5748,14 @@ PrefabInstance:
       propertyPath: castDistanceX
       value: 1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2343213666906260463, guid: ce925aa063242d4469f25b98c048c48c, type: 3}
+      propertyPath: moveSprintSpeed
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2343213666906260463, guid: ce925aa063242d4469f25b98c048c48c, type: 3}
+      propertyPath: moveSprintAnimSpeedFactor
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2395034736304706297, guid: ce925aa063242d4469f25b98c048c48c, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 0

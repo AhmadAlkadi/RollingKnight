@@ -433,6 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreNewGameStart: 0
   ignoreGameOver: 0
+  sceneLoadName: Ball_Movement_Scene
 --- !u!4 &75974609
 Transform:
   m_ObjectHideFlags: 0

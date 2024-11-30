@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public bool ignoreNewGameStart = false;
     public bool ignoreGameOver = false;
 
+    public string sceneLoadName;
+
     public int world { get; private set; } = 1;
     public int stage { get; private set; } = 1;
     public int lives { get; private set; } = 3;
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         healthManager.health = 3;
-        LoadLevel(1, 1);
+        LoadLevel(sceneLoadName);
     }
 
     public void GameOver()
@@ -62,10 +64,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene($"{world}-{stage}");
     }
 
+    public void LoadLevel(string scene_name)
+    {
+        SceneManager.LoadScene(scene_name);
+    }
+
     public void ResetLevel()
     {
         if (healthManager.health > 0) {
-            LoadLevel(world, stage);
+            LoadLevel(sceneLoadName);
         } else {
             GameOver();
         }

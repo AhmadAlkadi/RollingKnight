@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     private HealthManager healthManager;
+    public bool ignoreNewGameStart = false;
+    public bool ignoreGameOver = false;
 
     public int world { get; private set; } = 1;
     public int stage { get; private set; } = 1;
@@ -32,7 +34,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        NewGame();
+        if (!ignoreNewGameStart)
+        {
+            NewGame();
+        }
     }
 
     public void NewGame()
@@ -43,7 +48,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        NewGame();
+        if (!ignoreGameOver)
+        {
+            NewGame();
+        }
     }
 
     public void LoadLevel(int world, int stage)

@@ -105,8 +105,6 @@ public class gun : MonoBehaviour
 
         gunDirection = new Vector3(xInput, yInput, 0.0f);
 
-        Debug.Log(gunDirection);
-
         if (Mathf.Abs(xInput) > 0.0f)
         {
             idleDir = Mathf.Sign(xInput);

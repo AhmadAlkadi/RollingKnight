@@ -10,18 +10,7 @@ public class DeathAnimation: MonoBehaviour
     private Rigidbody2D rb;
 
     private void Reset() {
-        // SpriteRenderer[] spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-        // if (spriteRenderers == null) {
-        //     Debug.Log("There is no sprire renderer detected");
-        // }
-        // foreach (SpriteRenderer sr in spriteRenderers) {
-        //     if (sr.enabled) {
-        //         spriteRenderer = sr; // Assign the first active SpriteRenderer
-        //         Debug.Log("Found Something");
-        //         break;
-        //     }
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
         
 
@@ -35,9 +24,6 @@ public class DeathAnimation: MonoBehaviour
     private void UpdateSprite(){
         spriteRenderer.enabled = true;
         spriteRenderer.sortingOrder = 10;
-        // if(deadSprite != null) {
-        //     spriteRenderer.sprite = deadSprite;
-        // }
     }
 
     private void DisablePhysics() {
@@ -74,7 +60,6 @@ public class DeathAnimation: MonoBehaviour
         }
     }
 
-
     private IEnumerator Animate() {
         float elapsed = 0f;
         float duration = 3f;
@@ -110,9 +95,5 @@ public class DeathAnimation: MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
-
-        
-
-
     }
 }

@@ -38,6 +38,11 @@ public class HealthManager : MonoBehaviour
     {
         // Find the HeartsContainer and get all its child Image components
         GameObject heartsContainer = GameObject.Find("Canvas/HeartsContainer");
+        if (heartsContainer == null)
+        {
+            heartsContainer = GameObject.Find("HealthInterface/HeartsContainer");
+        }
+
         if (heartsContainer != null)
         {
             hearts = heartsContainer.GetComponentsInChildren<Image>();

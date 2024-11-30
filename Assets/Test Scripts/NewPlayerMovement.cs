@@ -5,35 +5,15 @@ using UnityEngine;
 
 public class NewPlayerMovement : MonoBehaviour
 {
-
-    private new Camera camera;
-    private float inputAxis;
-    private Vector2 velocity;
-    private new Rigidbody2D rigidbody;
-
     [SerializeField] public ParticleSystem pSysDust;
     [SerializeField] public ParticleSystem pSysFire;
     [SerializeField] public ParticleSystem pSysFreeze;
     [SerializeField] public List<bool> enablePSys;
-
-    private enum PSysType {NORMAL, FIRE, ICE};
+    public float particleOffsetX = 0.0f;
 
     public Animator mAnim;
     public bool hasJumped = false;
-
     public bool isOnGround = false;
-
-    private float idleDir = -1.0f;
-    private bool dustState = true;
-    private bool fireState = false;
-    private bool freezeState = false;
-
-    public float particleOffsetX = 0.0f;
-
-    private Vector2 moveDirection;
-
-    private float xInput = 0.0f;
-    private float yInput = 0.0f;
 
     public float castRadius = 0.25f;
     public float castDistance = 2.33f;
@@ -47,8 +27,22 @@ public class NewPlayerMovement : MonoBehaviour
     public float gravity => (-2.0f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2.0f), 2.0f);
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
-    //Boolean variable to track if the player is facing right
-    public bool isFacingRight { get; private set; } = true;
+
+    private new Camera camera;
+    private float inputAxis;
+    private Vector2 velocity;
+    private new Rigidbody2D rigidbody;
+
+    private enum PSysType {NORMAL, FIRE, ICE};
+    private bool dustState = true;
+    private bool fireState = false;
+    private bool freezeState = false;
+
+    private float idleDir = -1.0f;
+    private Vector2 moveDirection;
+
+    private float xInput = 0.0f;
+    private float yInput = 0.0f;
 
     private void Awake()
     {
@@ -65,7 +59,6 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
         if (dustState != enablePSys[0])
         {
             dustState = enablePSys[0];
@@ -104,7 +97,6 @@ public class NewPlayerMovement : MonoBehaviour
         mAnim.SetFloat("moveMag", Mathf.Abs(moveDirection.x));
         mAnim.SetFloat("idleDir", idleDir);
 
-
         if (Mathf.Abs(xInput) > 0.0f)
         {
             idleDir = Mathf.Sign(xInput);
@@ -122,18 +114,18 @@ public class NewPlayerMovement : MonoBehaviour
         }
 
         ApplyGravity();
-
     }
 
     private void GroundedMovement()
     {
         velocity.y = Mathf.Max(velocity.y, 0f);
         jumping = velocity.y > 0f;
+        hasJumped = jumping;
         if (Input.GetButtonDown("Jump"))
         {
             velocity.y = jumpForce;
             jumping = true;
-            hasJumped = false;
+            hasJumped = true;
         }
     }
 
@@ -160,11 +152,6 @@ public class NewPlayerMovement : MonoBehaviour
         {
             velocity.x *= moveDampening;
         }
-        
-        if (rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistanceX))
-        {
-            //velocity.x = 0f;
-        }
     }
 
     private void FixedUpdate()
@@ -181,7 +168,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if ((!isOnGround && !hasJumped) || (!isOnGround && hasJumped) && dustState)
         {
-            //pSysDust.Play(true);
+            pSysDust.Play(true);
         }
     }
 

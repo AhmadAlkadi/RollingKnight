@@ -150,6 +150,8 @@ GameObject:
   - component: {fileID: 4382211782396357915}
   - component: {fileID: 7260202365776497493}
   - component: {fileID: 2343213666906260463}
+  - component: {fileID: 3853249145584468582}
+  - component: {fileID: 1047284554050938551}
   m_Layer: 3
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -320,7 +322,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.1012454}
+    oldSize: {x: 5.125, y: 5.1}
     newSize: {x: 5.12, y: 5.1012454}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -376,11 +378,48 @@ MonoBehaviour:
   particleOffsetX: 0
   castRadius: 0.25
   castDistance: 2.33
+  castDistanceX: 2.33
   moveSpeed: 16
   moveFactor: 2
   moveDampening: 0.1
   maxJumpHeight: 5
   maxJumpTime: 1
+--- !u!114 &3853249145584468582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422322742290980341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1cbd7ceddc5d2448963a80001698e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invulnerableTimeSeconds: 3
+  knockBackDuration: 0.8
+  blinkDurationSeconds: 3
+  blinkIntervalSeconds: 0.1
+  resetLevelDelaySeconds: 3
+--- !u!114 &1047284554050938551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422322742290980341}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ccc1948ff6544349b0b3aec4eb470b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2088762754328349175}
+  deathSprites:
+  - {fileID: -3373273531141214214, guid: e958610de586594409a05b539aaf830e, type: 3}
+  - {fileID: -2125877062115158154, guid: f36bc3e0668596246bc83db4346b760d, type: 3}
+  - {fileID: -8645154754116224514, guid: e958610de586594409a05b539aaf830e, type: 3}
+  - {fileID: -8121957796251350938, guid: 929f7b1d2c003db49a4f0aeb5c94f10e, type: 3}
+  frameDuration: 0.2
 --- !u!1 &6974023981707032510
 GameObject:
   m_ObjectHideFlags: 0

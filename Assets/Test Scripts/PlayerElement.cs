@@ -33,6 +33,11 @@ public class PlayerElement : MonoBehaviour
         }
     }
 
+    public ELEMENT_TYPE GetElementType_El()
+    {
+        return currentElementType;
+    }
+
     public int GetIntELEMENT_TYPE()
     {
         int element = 0;
@@ -55,7 +60,9 @@ public class PlayerElement : MonoBehaviour
     {
         currentElementType = ELEMENT_TYPE.NORMAL;
         gun currentGun = gameObject.GetComponentInChildren<gun>();
+        NewPlayerMovement currentPlayer = gameObject.GetComponent<NewPlayerMovement>();
         currentGun.SetGun(gun.GUN_TYPE.NORMAL);
+        currentPlayer.EnableNormalEffectOnPlayer();
         isInvoked = false;
     }
 

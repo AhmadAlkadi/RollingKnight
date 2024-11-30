@@ -253,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreNewGameStart: 1
   ignoreGameOver: 1
+  sceneLoadName: Character_Health
 --- !u!4 &75974609
 Transform:
   m_ObjectHideFlags: 0

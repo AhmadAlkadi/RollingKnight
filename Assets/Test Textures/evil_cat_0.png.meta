@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 4c1e3f6c25cb28b4c9fb06c23191c514
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4015152052638373339
+    second: evil_cat_0_0
+  - first:
+      213: -4427280332033840802
+    second: evil_cat_0_1
+  - first:
+      213: -3836437240783037775
+    second: evil_cat_0_2
+  - first:
+      213: 6961577156387566974
+    second: evil_cat_0_3
+  - first:
+      213: -4066816849237605440
+    second: evil_cat_0_4
+  - first:
+      213: 8220164483690650468
+    second: evil_cat_0_5
+  - first:
+      213: -2159557441450738166
+    second: evil_cat_0_6
+  - first:
+      213: -9086637223604483356
+    second: evil_cat_0_7
+  - first:
+      213: -8563977164535191499
+    second: evil_cat_0_8
+  - first:
+      213: -7686012476906867181
+    second: evil_cat_0_9
+  - first:
+      213: 7320706066503097176
+    second: evil_cat_0_10
+  - first:
+      213: -2206125262162578311
+    second: evil_cat_0_11
+  - first:
+      213: 5061971251836028613
+    second: evil_cat_0_12
+  - first:
+      213: 7990643618557752618
+    second: evil_cat_0_13
+  - first:
+      213: 5291008739737619987
+    second: evil_cat_0_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: evil_cat_0_0
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1492
+        width: 240
+        height: 450
+      alignment: 9
+      pivot: {x: 0.09567283, y: 0.7965069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a2f473b705748c0800000000000000
+      internalID: -4015152052638373339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_1
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1648
+        width: 339
+        height: 288
+      alignment: 9
+      pivot: {x: 0.51431245, y: 0.078825206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59ac08aef32f82c0800000000000000
+      internalID: -4427280332033840802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_2
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 1520
+        width: 239
+        height: 447
+      alignment: 9
+      pivot: {x: 0.9161699, y: 0.8147786}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba1c04e7ac32cac0800000000000000
+      internalID: -3836437240783037775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_3
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 1375
+        width: 152
+        height: 621
+      alignment: 9
+      pivot: {x: 0.5, y: 0.8476826}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7574fa2a8d7c9060800000000000000
+      internalID: 6961577156387566974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_4
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 1648
+        width: 8
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c38e9e5f93cf87c0800000000000000
+      internalID: -4066816849237605440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_5
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 1512
+        width: 419
+        height: 286
+      alignment: 9
+      pivot: {x: 0.49420998, y: 0.7035774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bd9adab04e31270800000000000000
+      internalID: 8220164483690650468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_6
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 1265
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0ef646e2f5b702e0800000000000000
+      internalID: -2159557441450738166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_7
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 934
+        width: 336
+        height: 327
+      alignment: 9
+      pivot: {x: 0.46389952, y: 0.084544145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ea86349697c5e180800000000000000
+      internalID: -9086637223604483356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_8
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 978
+        width: 436
+        height: 273
+      alignment: 9
+      pivot: {x: 0.49999973, y: 0.908771}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538a25b8424a62980800000000000000
+      internalID: -8563977164535191499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_9
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 592
+        width: 160
+        height: 252
+      alignment: 9
+      pivot: {x: 0.59097445, y: 0.91395473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316febedf5cc55590800000000000000
+      internalID: -7686012476906867181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_10
+      rect:
+        serializedVersion: 2
+        x: 1493
+        y: 585
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85bd6f6716f589560800000000000000
+      internalID: 7320706066503097176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_11
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 585
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974b8ca33c44261e0800000000000000
+      internalID: -2206125262162578311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_12
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 593
+        width: 160
+        height: 240
+      alignment: 9
+      pivot: {x: 0.34837645, y: 0.9144361}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c60de8b80cbf3640800000000000000
+      internalID: 5061971251836028613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_13
+      rect:
+        serializedVersion: 2
+        x: 1861
+        y: 582
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2570eae80874ee60800000000000000
+      internalID: 7990643618557752618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil_cat_0_14
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 100
+        width: 132
+        height: 123
+      alignment: 9
+      pivot: {x: 0.07729363, y: 0.8352956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e4c837a607d6940800000000000000
+      internalID: 5291008739737619987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e68f129cb37afa643a7be4f3da4ceca9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      evil_cat_0_0: -4015152052638373339
+      evil_cat_0_1: -4427280332033840802
+      evil_cat_0_10: 7320706066503097176
+      evil_cat_0_11: -2206125262162578311
+      evil_cat_0_12: 5061971251836028613
+      evil_cat_0_13: 7990643618557752618
+      evil_cat_0_14: 5291008739737619987
+      evil_cat_0_2: -3836437240783037775
+      evil_cat_0_3: 6961577156387566974
+      evil_cat_0_4: -4066816849237605440
+      evil_cat_0_5: 8220164483690650468
+      evil_cat_0_6: -2159557441450738166
+      evil_cat_0_7: -9086637223604483356
+      evil_cat_0_8: -8563977164535191499
+      evil_cat_0_9: -7686012476906867181
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

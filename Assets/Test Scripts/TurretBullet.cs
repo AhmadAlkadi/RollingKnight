@@ -163,4 +163,16 @@ public class TurretBullet : MonoBehaviour
     {
         parentObject.SetActive(false);
     }
+    
+    public void setActivateFire()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+    }
+
+    public void setActivateIce()
+    {
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(true);
+    }
 }

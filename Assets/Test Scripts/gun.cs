@@ -25,6 +25,9 @@ public class gun : MonoBehaviour
     public GUN_TYPE currentGunType = GUN_TYPE.FLAME;
     public GUN_TYPE forceGunType = GUN_TYPE.FLAME;
 
+    public enum ELEMENT_TYPE { NORMAL, FIRE, ICE };
+    public ELEMENT_TYPE currentElementType = ELEMENT_TYPE.NORMAL;
+
     public float attackCoolDownNormal = 0.5f;
     public float attackCoolDownMachine = 0.07f;
     public float attackCoolDownFlame = 0.35f;
@@ -87,10 +90,8 @@ public class gun : MonoBehaviour
         for (int i=0; i<numberOfBullets; i++)
         {
             var newBullet = Instantiate(turret_bullet);
-            newBullet.gameObject.layer = LayerMask.NameToLayer("Bullet");
-            pBullets.Add(newBullet);
-
             var bulletChild = newBullet.transform.GetChild(0).gameObject.GetComponent<TurretBullet>();
+           
             bulletChild.gameObject.layer = LayerMask.NameToLayer("Bullet");
             bulletChild.gameObject.GetComponent<CircleCollider2D>().excludeLayers |= (1 << LayerMask.NameToLayer("Player")) ;
             bullets.Add(bulletChild);
@@ -104,8 +105,6 @@ public class gun : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
 
         gunDirection = new Vector3(xInput, yInput, 0.0f);
-
-        Debug.Log(gunDirection);
 
         if (Mathf.Abs(xInput) > 0.0f)
         {
@@ -165,6 +164,20 @@ public class gun : MonoBehaviour
 
             if (index >= 0)
             {
+                PlayerElement currentElement = gameObject.GetComponentInParent<PlayerElement>();
+                int elementType = currentElement.GetIntELEMENT_TYPE();
+                switch (elementType)
+                {
+                    case 0:
+                        bullets[index].setActivateFire();
+                        break;
+                    case 1:
+                        bullets[index].setActivateFire();
+                        break;
+                    case 2:
+                        bullets[index].setActivateIce();
+                        break;
+                }
                 bullets[index].SetPosition(shootLocation.transform.position.x, shootLocation.transform.position.y);
                 bullets[index].SetOffsetPoint(new Vector3(0.0f, 0.0f));
                 bullets[index].SetSpeed(bullet_speed);
@@ -211,6 +224,21 @@ public class gun : MonoBehaviour
                 if (y_direction < 0.0f)
                 {
                     local_offset_y = -local_offset_y;
+                }
+
+                PlayerElement currentElement = gameObject.GetComponentInParent<PlayerElement>();
+                int elementType = currentElement.GetIntELEMENT_TYPE();
+                switch (elementType)
+                {
+                    case 0:
+                        bullets[index].setActivateFire();
+                        break;
+                    case 1:
+                        bullets[index].setActivateFire();
+                        break;
+                    case 2:
+                        bullets[index].setActivateIce();
+                        break;
                 }
 
                 bullets[index].SetPosition(parent.transform.position.x, parent.transform.position.y);

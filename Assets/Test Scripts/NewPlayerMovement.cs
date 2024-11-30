@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class NewPlayerMovement : MonoBehaviour
 {
 
@@ -14,6 +15,8 @@ public class NewPlayerMovement : MonoBehaviour
     [SerializeField] public ParticleSystem pSysFire;
     [SerializeField] public ParticleSystem pSysFreeze;
     [SerializeField] public List<bool> enablePSys;
+
+    private enum PSysType {NORMAL, FIRE, ICE};
 
     public Animator mAnim;
     public bool hasJumped = false;
@@ -34,6 +37,7 @@ public class NewPlayerMovement : MonoBehaviour
 
     public float castRadius = 0.25f;
     public float castDistance = 2.33f;
+    public float castDistanceX = 2.33f;
     public float moveSpeed = 8.0f;
     public float moveFactor = 2.0f;
     public float moveDampening = 0.9f;
@@ -156,10 +160,10 @@ public class NewPlayerMovement : MonoBehaviour
         {
             velocity.x *= moveDampening;
         }
-
-        if (rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistance))
+        
+        if (rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistanceX))
         {
-            velocity.x = 0f;
+            //velocity.x = 0f;
         }
     }
 
@@ -187,5 +191,26 @@ public class NewPlayerMovement : MonoBehaviour
         {
             pSysDust.Play(true);
         }
+    }
+
+    public void EnableNormalEffectOnPlayer()
+    {
+        enablePSys[(int)PSysType.NORMAL] = true;
+        enablePSys[(int)PSysType.FIRE] = false;
+        enablePSys[(int)PSysType.ICE] = false;
+    }
+
+    public void EnableFireEffectOnPlayer()
+    {
+        enablePSys[(int)PSysType.NORMAL] = false;
+        enablePSys[(int)PSysType.FIRE] = true;
+        enablePSys[(int)PSysType.ICE] = false;
+    }
+
+    public void EnableIceEffectOnPlayer()
+    {
+        enablePSys[(int)PSysType.NORMAL] = false;
+        enablePSys[(int)PSysType.FIRE] = false;
+        enablePSys[(int)PSysType.ICE] = true;
     }
 }

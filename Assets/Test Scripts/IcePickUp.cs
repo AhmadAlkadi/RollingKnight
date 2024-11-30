@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FirePickUp : MonoBehaviour
+public class IcePickUp : MonoBehaviour
 {
     public bool destroyOnTouch = false;
     private bool isTouchingPowerUp = false;
@@ -48,14 +48,14 @@ public class FirePickUp : MonoBehaviour
             gun currentGun = collision.gameObject.GetComponentInChildren<gun>();
             playerElement = currentElement;
             playergun = currentGun;
-            currentElement.SetElement(PlayerElement.ELEMENT_TYPE.FIRE);
-            currentGun.SetGun(gun.GUN_TYPE.FLAME);
+            currentElement.SetElement(PlayerElement.ELEMENT_TYPE.ICE);
+            currentGun.SetGun(gun.GUN_TYPE.ICE);
 
             if (isTouchingPowerUp == true)
             {
-                currentPower = PlayerElement.ELEMENT_TYPE.FIRE;
-                gunType = gun.GUN_TYPE.FLAME;
-                currentElementplayer.EnableFireEffectOnPlayer();
+                currentPower = PlayerElement.ELEMENT_TYPE.ICE;
+                gunType = gun.GUN_TYPE.ICE;
+                currentElementplayer.EnableIceEffectOnPlayer();
 
 
             }

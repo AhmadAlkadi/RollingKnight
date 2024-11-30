@@ -3,7 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    private static GameManager _instance;
+    public static GameManager Instance {
+        get
+        {
+            if (_instance is null)
+            {
+                Debug.LogWarning("Game manager is NULL!");
+            }
+
+            return _instance;
+        }
+
+        private set {} }
+
     private HealthManager healthManager;
     public bool ignoreNewGameStart = false;
     public bool ignoreGameOver = false;
@@ -19,10 +32,13 @@ public class GameManager : MonoBehaviour
         //Access to HealthManager to get current player's health
         healthManager = GetComponent<HealthManager>();
 
-        if (Instance != null) {
+        if (_instance != null)
+        {
             DestroyImmediate(gameObject);
-        } else {
-            Instance = this;
+        }
+        else
+        {
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
     }

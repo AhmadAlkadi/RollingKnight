@@ -9,6 +9,7 @@ TagManager:
   - Sand
   - Snow
   - Rock
+  - PlayerAttackBox
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,6 @@ TagManager:
   - Bullet
   - PowerUp
   - Enemy
-  - 
-  - 
   - 
   - 
   - 

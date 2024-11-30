@@ -5,40 +5,22 @@ using UnityEngine;
 
 public class NewPlayerMovement : MonoBehaviour
 {
-
-    private new Camera camera;
-    private float inputAxis;
-    private Vector2 velocity;
-    private new Rigidbody2D rigidbody;
-
     [SerializeField] public ParticleSystem pSysDust;
     [SerializeField] public ParticleSystem pSysFire;
     [SerializeField] public ParticleSystem pSysFreeze;
     [SerializeField] public List<bool> enablePSys;
-
-    private enum PSysType {NORMAL, FIRE, ICE};
+    public float particleOffsetX = 0.0f;
 
     public Animator mAnim;
     public bool hasJumped = false;
-
     public bool isOnGround = false;
-
-    private float idleDir = -1.0f;
-    private bool dustState = true;
-    private bool fireState = false;
-    private bool freezeState = false;
-
-    public float particleOffsetX = 0.0f;
-
-    private Vector2 moveDirection;
-
-    private float xInput = 0.0f;
-    private float yInput = 0.0f;
 
     public float castRadius = 0.25f;
     public float castDistance = 2.33f;
     public float castDistanceX = 2.33f;
     public float moveSpeed = 8.0f;
+    public float moveSprintSpeed = 12.0f;
+    public float moveSprintAnimSpeedFactor = 1.25f;
     public float moveFactor = 2.0f;
     public float moveDampening = 0.9f;
     public float maxJumpHeight = 5.0f;
@@ -47,8 +29,24 @@ public class NewPlayerMovement : MonoBehaviour
     public float gravity => (-2.0f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2.0f), 2.0f);
     public bool grounded { get; private set; }
     public bool jumping { get; private set; }
-    //Boolean variable to track if the player is facing right
-    public bool isFacingRight { get; private set; } = true;
+
+    private new Camera camera;
+    private float inputAxis;
+    private Vector2 velocity;
+    private new Rigidbody2D rigidbody;
+
+    private enum PSysType {NORMAL, FIRE, ICE};
+    private bool dustState = true;
+    private bool fireState = false;
+    private bool freezeState = false;
+
+    private float idleDir = -1.0f;
+    private Vector2 moveDirection;
+
+    private float xInput = 0.0f;
+    private float yInput = 0.0f;
+
+    private bool isRunning = false;
 
     private void Awake()
     {
@@ -65,7 +63,6 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
         if (dustState != enablePSys[0])
         {
             dustState = enablePSys[0];
@@ -104,7 +101,6 @@ public class NewPlayerMovement : MonoBehaviour
         mAnim.SetFloat("moveMag", Mathf.Abs(moveDirection.x));
         mAnim.SetFloat("idleDir", idleDir);
 
-
         if (Mathf.Abs(xInput) > 0.0f)
         {
             idleDir = Mathf.Sign(xInput);
@@ -122,18 +118,18 @@ public class NewPlayerMovement : MonoBehaviour
         }
 
         ApplyGravity();
-
     }
 
     private void GroundedMovement()
     {
         velocity.y = Mathf.Max(velocity.y, 0f);
         jumping = velocity.y > 0f;
+        hasJumped = jumping;
         if (Input.GetButtonDown("Jump"))
         {
             velocity.y = jumpForce;
             jumping = true;
-            hasJumped = false;
+            hasJumped = true;
         }
     }
 
@@ -152,18 +148,35 @@ public class NewPlayerMovement : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
         float inputAxisDampening = Input.GetAxisRaw("Horizontal");
-        velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * moveFactor * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift))
+        {
+            isRunning = true;
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            isRunning = false;
+        }
+
+        if (isRunning)
+        {
+            Animator anim = GetComponent<Animator>();
+            mAnim.SetFloat("animMoveSpeed", moveSprintAnimSpeedFactor);
+
+            isRunning = true;
+            velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSprintSpeed, moveSprintSpeed * moveFactor * Time.deltaTime);
+        }
+        else
+        {
+            mAnim.SetFloat("animMoveSpeed", 1.0f);
+            velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * moveFactor * Time.deltaTime);
+        }
 
         moveDirection = new Vector2(Mathf.Abs(xInput) > 0.0f ? Mathf.Sign(xInput) : 0.0f, Mathf.Abs(yInput) > 0.0f ? Mathf.Sign(yInput) : 0.0f).normalized;
 
         if (Mathf.Abs(inputAxisDampening) == 0.0f)
         {
             velocity.x *= moveDampening;
-        }
-        
-        if (rigidbody.Raycast(Vector2.right * velocity.x, castRadius, castDistanceX))
-        {
-            //velocity.x = 0f;
         }
     }
 
@@ -181,7 +194,7 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if ((!isOnGround && !hasJumped) || (!isOnGround && hasJumped) && dustState)
         {
-            //pSysDust.Play(true);
+            pSysDust.Play(true);
         }
     }
 

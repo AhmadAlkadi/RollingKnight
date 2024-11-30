@@ -18,14 +18,17 @@ public class NewPlayer: MonoBehaviour
     private Coroutine knockbackRoutine;
     private Coroutine blinkingCoroutine; // Reference to the blinking coroutine
 
-    private void Awake() {
+    private void Start()
+    {
         deathAnimation = GetComponent<DeathAnimation>();
-        if(GameManager.Instance != null) {
+        if (GameManager.Instance != null)
+        {
             healthManager = GameManager.Instance.GetComponent<HealthManager>();
         }
 
         // Handle missing HealthManager component
-        if (healthManager == null) {
+        if (healthManager == null)
+        {
             Debug.LogError("HealthManager component not found on GameManager!");
         }
     }

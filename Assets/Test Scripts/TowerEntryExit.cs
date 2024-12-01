@@ -82,9 +82,6 @@ public class TowerEntryExit : MonoBehaviour
             {
                 isInsideTower ^= true;
 
-                TowerOutside.SetActive(!isInsideTower);
-                TowerInsideFront.SetActive(isInsideTower);
-
                 foreach (var collider in towerInsideFrontColliders)
                 {
                     //collider.enabled = isInsideTower;
@@ -107,6 +104,9 @@ public class TowerEntryExit : MonoBehaviour
         {
             withinTowerEntryWayKeyPressed = false;
         }
+
+        TowerOutside.SetActive(!isInsideTower);
+        TowerInsideFront.SetActive(isInsideTower);
 
         // show slightly transparent color of the archway/entry to the tower and completely opaque when outside
         // the tower

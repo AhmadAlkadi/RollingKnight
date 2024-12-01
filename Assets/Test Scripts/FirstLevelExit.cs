@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class FirstLevelExit : MonoBehaviour
 {
-    bool checker;
+    public string loadScene = "fire_test";
+    private bool checker;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
-        checker = true;
-        
+        checker = true;   
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -20,7 +20,7 @@ public class FirstLevelExit : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow) && checker)
         {
-            SceneManager.LoadScene("fire_test"); 
+            SceneManager.LoadScene(loadScene); 
         }
     }
 }

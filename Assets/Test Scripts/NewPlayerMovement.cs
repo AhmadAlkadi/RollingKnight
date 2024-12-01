@@ -18,6 +18,8 @@ public class NewPlayerMovement : MonoBehaviour
     public float castRadius = 0.25f;
     public float castDistance = 2.33f;
     public float castDistanceX = 2.33f;
+    public float castOffsetX = -0.3f;
+    public float castOffsetY = -1.0f;
     public float moveSpeed = 8.0f;
     public float moveSprintSpeed = 12.0f;
     public float moveSprintAnimSpeedFactor = 1.25f;
@@ -108,7 +110,7 @@ public class NewPlayerMovement : MonoBehaviour
         }
 
         HorizontalMovement();
-        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance);
+        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance, castOffsetX, castOffsetY);
         isOnGround = grounded;
         mAnim.SetBool("isOnGround", isOnGround);
 

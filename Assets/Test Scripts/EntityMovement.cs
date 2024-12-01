@@ -45,11 +45,11 @@ public class EntityMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
 
-        if (rb.Raycast(direction, castRadius, castDistance)) {
+        if (rb.Raycast(direction, castRadius, castDistance, 0.0f, 0.0f)) {
             direction = -direction;
         }
 
-        if (rb.Raycast(Vector2.down, castRadius, castDistance)) {
+        if (rb.Raycast(Vector2.down, castRadius, castDistance, 0.0f, 0.0f)) {
             velocity.y = Mathf.Max(velocity.y, 0f);
         }
 

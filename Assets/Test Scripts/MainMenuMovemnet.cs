@@ -108,7 +108,7 @@ public class MainMenuMovement : MonoBehaviour
         }
 
         HorizontalMovement();
-        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance);
+        grounded = rigidbody.Raycast(Vector2.down, castRadius, castDistance, 0.0f, 0.0f);
         isOnGround = grounded;
         mAnim.SetBool("isOnGround", isOnGround);
 

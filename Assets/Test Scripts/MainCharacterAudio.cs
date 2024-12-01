@@ -20,7 +20,7 @@ public class MainCharacterAudio : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource is missing on MainCharacter!");
+            Debug.LogWarning("AudioSource is missing on MainCharacter!");
         }
 
         playerMovement = GetComponent<NewPlayerMovement>();
@@ -130,7 +130,7 @@ public class MainCharacterAudio : MonoBehaviour
     /// </summary>
     private void StopWalkingSound()
     {
-        if (audioSource.isPlaying && audioSource.loop)
+        if (audioSource && audioSource.isPlaying && audioSource.loop)
         {
             audioSource.Stop();
             audioSource.loop = false;

@@ -12,7 +12,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (mainCharacterAudio == null)
         {
-            Debug.LogError("MainCharacterAudio script is missing on MainCharacter!");
+            Debug.LogWarning("MainCharacterAudio script is missing on MainCharacter!");
         }
     }
 

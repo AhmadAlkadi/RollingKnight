@@ -9270,6 +9270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815fbfae58f04c4985aa7f678ea80a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadScene: fire_test
 --- !u!4 &1431403474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6557715735955972973, guid: dc4c89b3345d0e742812cafcec35f5b0, type: 3}

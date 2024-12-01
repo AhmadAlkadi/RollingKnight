@@ -16,7 +16,7 @@ public class PickUpAudio : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
-            Debug.LogError("AudioSource is missing on PickUpAudio!");
+            Debug.LogWarning("AudioSource is missing on PickUpAudio!");
         }
     }
 

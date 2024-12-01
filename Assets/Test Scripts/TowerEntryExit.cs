@@ -8,6 +8,7 @@ public class TowerEntryExit : MonoBehaviour
     public GameObject TowerOutsideDoorArchway2;
     public GameObject TowerInsideBack;
     public GameObject TowerInsideFront;
+    public GameObject TowerInsidePlatforms;
     public GameObject TowerMasking;
     public float alphaVisibilityOfArchway = 0.5f;
     public float alphaVisibilityOfMasking = 0.5f;
@@ -23,6 +24,9 @@ public class TowerEntryExit : MonoBehaviour
 
     [SerializeField]
     private BoxCollider2D[] towerInsideFrontColliders; // should be set to private when tested to work
+
+    [SerializeField]
+    private BoxCollider2D[] towerInsideFrontPlatforms; // should be set to private when tested to work
 
     [SerializeField]
     private BoxCollider2D[] towerInsideBackColliders; // should be set to private when tested to work
@@ -52,6 +56,7 @@ public class TowerEntryExit : MonoBehaviour
     void Start()
     {
         towerInsideFrontColliders = TowerInsideFront.GetComponents<BoxCollider2D>();
+        towerInsideFrontPlatforms = TowerInsidePlatforms.GetComponentsInChildren<BoxCollider2D>();
         towerInsideBackColliders = TowerInsideBack.GetComponents<BoxCollider2D>();
         matTowerOutsideDoorArchway = TowerOutsideDoorArchway.GetComponent<TilemapRenderer>().material;
         matTowerOutsideDoorArchway2 = TowerOutsideDoorArchway2.GetComponent<TilemapRenderer>().material;
@@ -81,6 +86,11 @@ public class TowerEntryExit : MonoBehaviour
                 TowerInsideFront.SetActive(isInsideTower);
 
                 foreach (var collider in towerInsideFrontColliders)
+                {
+                    //collider.enabled = isInsideTower;
+                }
+                
+                foreach (var collider in towerInsideFrontPlatforms)
                 {
                     collider.enabled = isInsideTower;
                 }

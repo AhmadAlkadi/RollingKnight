@@ -8,6 +8,8 @@ public class CatAudio : MonoBehaviour
 
     private AudioSource audioSource;
 
+    public bool enableDebugLog = false;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -23,7 +25,10 @@ public class CatAudio : MonoBehaviour
         {
             int randomIndex = Random.Range(0, catAttackClips.Length);
             audioSource.PlayOneShot(catAttackClips[randomIndex]);
-            Debug.Log("Cat attack sound played.");
+            if (enableDebugLog)
+            {
+                Debug.Log("Cat attack sound played.");
+            }
         }
     }
 
@@ -37,7 +42,10 @@ public class CatAudio : MonoBehaviour
                 int randomIndex = Random.Range(0, catIdleClips.Length);
                 audioSource.clip = catIdleClips[randomIndex];
                 audioSource.Play();
-                Debug.Log("Cat idle sound played.");
+                if (enableDebugLog)
+                {
+                    Debug.Log("Cat idle sound played.");
+                }
             }
         }
     }

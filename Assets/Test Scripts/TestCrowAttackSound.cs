@@ -7,6 +7,8 @@ public class TestCrowAttackSound : MonoBehaviour
 
     private float attackTimer; // Timer to track time until the next attack
 
+    public bool enableDebugLog = false;
+
     private void Start()
     {
         // Ensure the Animator is assigned
@@ -41,7 +43,11 @@ public class TestCrowAttackSound : MonoBehaviour
         if (crowAnimator != null)
         {
             crowAnimator.Play("crow_attacking"); // Trigger attack animation
-            Debug.Log("Crow attack animation triggered: crow_attacking");
+
+            if (enableDebugLog)
+            {
+                Debug.Log("Crow attack animation triggered: crow_attacking");
+            }
 
             // Schedule a return to flying animation after the attack animation ends
             float attackAnimationLength = crowAnimator.GetCurrentAnimatorStateInfo(0).length;
@@ -57,7 +63,11 @@ public class TestCrowAttackSound : MonoBehaviour
     {
         // Reset the timer to the fixed attack interval
         attackTimer = attackInterval;
-        Debug.Log($"Next crow attack in {attackInterval:F2} seconds.");
+
+        if (enableDebugLog)
+        {
+            Debug.Log($"Next crow attack in {attackInterval:F2} seconds.");
+        }
     }
 
     private void ReturnToFlyingAnimation()
@@ -65,7 +75,11 @@ public class TestCrowAttackSound : MonoBehaviour
         if (crowAnimator != null)
         {
             crowAnimator.Play("crow_flying");
-            Debug.Log("Crow returned to flying animation: crow_flying");
+
+            if (enableDebugLog)
+            {
+                Debug.Log("Crow returned to flying animation: crow_flying");
+            }
         }
     }
 }

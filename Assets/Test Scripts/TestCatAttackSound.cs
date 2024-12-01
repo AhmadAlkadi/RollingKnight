@@ -4,6 +4,7 @@ public class TestCatAttackSound : MonoBehaviour
 {
     [SerializeField] private Animator catAnimator; // Reference to the Animator component
     [SerializeField] private float attackInterval = 8f; // Time between attacks
+    public bool enableDebugLog = false;
 
     private float attackTimer; // Timer to track time until the next attack
     private bool isAttacking = false; // Ensures attack animation only plays once per cycle
@@ -45,7 +46,11 @@ public class TestCatAttackSound : MonoBehaviour
         {
             isAttacking = true; // Lock to prevent multiple triggers
             catAnimator.Play("cat_attack"); // Trigger attack animation
-            Debug.Log("Cat attack animation triggered: cat_attack");
+
+            if (enableDebugLog)
+            {
+                Debug.Log("Cat attack animation triggered: cat_attack");
+            }
 
             // Schedule a return to idle animation after the attack animation ends
             float attackAnimationLength = GetAnimationClipLength("cat_attack");
@@ -62,7 +67,12 @@ public class TestCatAttackSound : MonoBehaviour
         if (catAnimator != null)
         {
             catAnimator.Play("cat_idle"); // Transition back to idle
-            Debug.Log("Cat returned to idle animation: cat_idle");
+
+            if (enableDebugLog)
+            {
+                Debug.Log("Cat returned to idle animation: cat_idle");
+            }
+
             isAttacking = false; // Unlock for the next attack cycle
             attackTimer = attackInterval; // Reset the attack timer
         }
@@ -80,6 +90,7 @@ public class TestCatAttackSound : MonoBehaviour
                 }
             }
         }
+
         Debug.LogWarning($"Animation clip '{clipName}' not found!");
         return 0.5f; // Fallback duration if the clip isn't found
     }

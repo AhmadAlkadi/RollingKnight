@@ -8,6 +8,7 @@ public class test_anim_and_particles : MonoBehaviour
     public float particleOffsetX = 0.0f;
     public bool isOnGround = false;
     public bool hasJumped = false;
+    public float jumpForce = 30.0f;
 
     [SerializeField] public ParticleSystem pSysDust;
     [SerializeField] public ParticleSystem pSysFire;
@@ -50,12 +51,12 @@ public class test_anim_and_particles : MonoBehaviour
             ballAudio.hasJumped = hasJumped;
         }
 
-        if (dustState != enablePSys[0])
+        if (dustState != enablePSys[0] && pSysDust)
         {
             dustState = enablePSys[0];
         }
 
-        if (fireState != enablePSys[1])
+        if (fireState != enablePSys[1] && pSysFire)
         {
             fireState = enablePSys[1];
 
@@ -69,7 +70,7 @@ public class test_anim_and_particles : MonoBehaviour
             }
         }
 
-        if (freezeState != enablePSys[2])
+        if (freezeState != enablePSys[2] && pSysFreeze)
         {
             freezeState = enablePSys[2];
 
@@ -91,11 +92,11 @@ public class test_anim_and_particles : MonoBehaviour
         if (Mathf.Abs(xInput) > 0.0f)
         {
             idleDir = Mathf.Sign(xInput);
-            pSysDust.transform.localPosition = new Vector3(
-                particleOffsetX * xInput,
-                pSysDust.transform.localPosition.y,
-                pSysDust.transform.localPosition.z
-            );
+
+            if (pSysDust)
+            {
+                pSysDust.transform.localPosition = new Vector3(particleOffsetX * xInput, pSysDust.transform.localPosition.y, pSysDust.transform.localPosition.z);
+            }
         }
 
         ballAudio.HandleWalkingSound();
@@ -113,8 +114,7 @@ public class test_anim_and_particles : MonoBehaviour
         if (hasJumped && isOnGround)
         {
             // Apply jump force using AddForce with Impulse mode
-            float jump_value = 30.0f;
-            body.AddForce(new Vector2(0, jump_value), ForceMode2D.Impulse);
+            body.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
             hasJumped = false;   
         }
@@ -136,7 +136,7 @@ public class test_anim_and_particles : MonoBehaviour
 
     public void OnJumpRoll()
     {
-        if (!isOnGround && dustState)
+        if ((!isOnGround && !hasJumped && pSysDust) || (!isOnGround && hasJumped) && dustState && pSysDust)
         {
             pSysDust.Play(true);
         }
@@ -149,7 +149,7 @@ public class test_anim_and_particles : MonoBehaviour
 
     public void OnFlatRoll()
     {
-        if (isOnGround && !hasJumped && dustState)
+        if (isOnGround && !hasJumped && dustState && pSysDust)
         {
             pSysDust.Play(true);
         }

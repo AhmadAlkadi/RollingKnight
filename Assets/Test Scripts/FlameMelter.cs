@@ -3,8 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class FlameMelter : MonoBehaviour
 {
-    private bool isBurning = false;
-
+    private bool isBurning = true;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -12,7 +11,7 @@ public class FlameMelter : MonoBehaviour
 
         if (fm)
         {
-            fm.SetIsBurning(true);
+            fm.SetIsBurning(isBurning);
         }
     }
 

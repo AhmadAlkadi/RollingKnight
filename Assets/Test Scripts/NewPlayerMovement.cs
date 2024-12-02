@@ -14,6 +14,7 @@ public class NewPlayerMovement : MonoBehaviour
     public Animator mAnim;
     public bool hasJumped = false;
     public bool isOnGround = false;
+    public bool flipMovement = false;
 
     public float castRadius = 0.25f;
     public float castDistance = 2.33f;
@@ -146,8 +147,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
-        inputAxis = Input.GetAxis("Horizontal");
-        xInput = Input.GetAxisRaw("Horizontal");
+        inputAxis = !flipMovement ? Input.GetAxis("Horizontal") : -Input.GetAxis("Horizontal");
+        xInput = !flipMovement ? Input.GetAxisRaw("Horizontal") : -Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
         float inputAxisDampening = Input.GetAxisRaw("Horizontal");
 
@@ -186,9 +187,9 @@ public class NewPlayerMovement : MonoBehaviour
     {
         Vector2 position = rigidbody.position;
         position += velocity * Time.fixedDeltaTime;
-        Vector2 leftEdge = camera.ScreenToWorldPoint(Vector2.zero);
-        Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        position.x = Mathf.Clamp(position.x, leftEdge.x + 0.8f, rightEdge.x - 0.5f);
+        //Vector2 leftEdge = camera.ScreenToWorldPoint(Vector2.zero);
+        //Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        //position.x = Mathf.Clamp(position.x, leftEdge.x + 0.8f, rightEdge.x - 0.5f);
         rigidbody.MovePosition(position);
     }
 

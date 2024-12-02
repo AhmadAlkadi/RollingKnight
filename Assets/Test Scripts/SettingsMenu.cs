@@ -21,9 +21,7 @@ public class SettingsMenu : MonoBehaviour
         {
             activate = false;
             player.enabled = false;
-            Time.timeScale = 0.0f;
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            //sgameObject.transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().enabled = true;
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
             gameObject.transform.GetChild(2).gameObject.SetActive(true);
         }

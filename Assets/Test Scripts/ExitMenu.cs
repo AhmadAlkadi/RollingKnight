@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExitMenu : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class ExitMenu : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("SettingMenu"))
         {
-            Debug.Log("In");
+            GetComponent<Text>().color = Color.red;
             active = true;
         }
     }
@@ -40,6 +41,7 @@ public class ExitMenu : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("SettingMenu"))
         {
+            GetComponent<Text>().color = Color.black;
             active = false;
         }
     }

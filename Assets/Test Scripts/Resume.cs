@@ -1,6 +1,7 @@
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Resume : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Resume : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Physics.SyncTransforms();
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class Resume : MonoBehaviour
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("SettingMenu"))
         {
-            Debug.Log("In");
+            this.transform.GetChild(0).GetComponent<Text>().color = Color.red;
             active = true;
         }
     }
@@ -37,6 +38,7 @@ public class Resume : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("SettingMenu"))
         {
+            this.transform.GetChild(0).GetComponent<Text>().color = Color.black;
             active = false;
         }
     }

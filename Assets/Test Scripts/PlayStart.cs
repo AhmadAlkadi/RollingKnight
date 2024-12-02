@@ -18,6 +18,6 @@ public class PlayStart : MonoBehaviour
 
     private void Die()
     {
-        SceneManager.LoadScene("fire_test");
+        SceneManager.LoadScene("Story");
     }
 }

@@ -481,8 +481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: -80.42634}
-  m_SizeDelta: {x: 640, y: 730.8556}
+  m_AnchoredPosition: {x: -9, y: -208.20697}
+  m_SizeDelta: {x: 640, y: 986.4169}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550528839
 MonoBehaviour:
@@ -517,34 +517,49 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You wake
+  m_Text: 'You wake up, your mind clouded and disoriented.
 
+    
 
-    It feels Wet and Damp
+    
 
+    The
+    ground beneath you is cold and slick.
 
-    you feel the droplets of water
-    fall on top of you face?
+    Water trickles down your face in
+    steady droplets, each one cold and sharp against your face.
 
+    
 
-    ?????
+    
 
+    "Something
+    doesn''t feel right..."
 
-    You realize something feels wrong
+    
 
+    
 
-    you
-    go to raise your arm but feel a wiggly feel in your arms
+    You try to lift your arm but feel
+    something different about it. "Why does my arm feel limp and light?" You wondered
+    to yourself.
 
+    
 
-    your also somehow
-    able to focus inside the cave from the little bit of lighe shining through
+    
 
+    As your regain your vision you notice that you
+    are inside a mysterious cave with specks of light throughout. Upon closer inspection
+    you also notice your body has taken another form entirely, to what it appears
+    to be a ball of yarn?
 
-    you
-    think to yourself that you may have been trasnformed as you slowly regain your
-    memories but that''s not important right now you must get out and see what has
-    happened...'
+    
+
+    
+
+    As much as you want to stay there gazing
+    at your new body you realize that there are more important matters to attend
+    to, such as figuring a way out of this ominous cave...'
 --- !u!222 &1550528840
 CanvasRenderer:
   m_ObjectHideFlags: 0

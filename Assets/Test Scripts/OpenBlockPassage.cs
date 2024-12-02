@@ -36,11 +36,11 @@ public class OpenBlockPassage : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             // need @proxadator updates code to know if the bullet is a fire type bullet
-            PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
+            TurretBullet currentElement = collision.gameObject.GetComponent<TurretBullet>();
 
             if (currentElement != null)
             {
-                if (currentElement.GetIntELEMENT_TYPE() == (int)PlayerElement.ELEMENT_TYPE.FIRE)
+                if (currentElement.isFire())
                 {
                     isHit = true;
                 }

@@ -14,8 +14,41 @@ public class OpenBlockPassage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isHit = true;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            PlayerElement player_element = null;
+
+            if (collision.gameObject.CompareTag("PlayerAttackBox"))
+            {
+                collision.gameObject.transform.parent.TryGetComponent<PlayerElement>(out player_element);
+            }
+            else
+            {
+                collision.gameObject.TryGetComponent<PlayerElement>(out player_element);
+            }
+
+            if (player_element && player_element.GetElementType_El() == PlayerElement.ELEMENT_TYPE.FIRE)
+            {
+                isHit = true;
+            }
+        }
+
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        {
+            // need @proxadator updates code to know if the bullet is a fire type bullet
+            PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
+
+            if (currentElement != null)
+            {
+                if (currentElement.GetIntELEMENT_TYPE() == (int)PlayerElement.ELEMENT_TYPE.FIRE)
+                {
+                    isHit = true;
+                }
+            }
+        }
     }
+
+    private void objectDeactivate() { gameObject.SetActive(false); }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

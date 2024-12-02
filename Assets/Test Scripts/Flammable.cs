@@ -22,7 +22,17 @@ public class flammable : MonoBehaviour
         if(collision.gameObject.layer == 3)
         {
             GameObject child = gameObject.transform.GetChild(0).gameObject;
-            PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
+            PlayerElement currentElement = null;
+
+            if (collision.gameObject.CompareTag("PlayerAttackBox"))
+            {
+                currentElement = collision.gameObject.transform.parent.gameObject.GetComponent<PlayerElement>();
+            }
+            else
+            {
+                collision.gameObject.GetComponent<PlayerElement>();
+            }
+
             TurretBullet TurrentElemnt = collision.gameObject.GetComponent<TurretBullet>();
             if(TurrentElemnt != null)
             {
@@ -43,15 +53,10 @@ public class flammable : MonoBehaviour
         {
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
-            TurretBullet TurrentElemnt = collision.gameObject.GetComponent<TurretBullet>();
-            if (TurrentElemnt != null)
-            {
-                child.SetActive(true);
-                Invoke(nameof(setInActive), timeToVanish);
-            }
+
             if (currentElement != null)
             {
-                if (currentElement.GetIntELEMENT_TYPE() == 1)
+                if (currentElement.GetIntELEMENT_TYPE() == (int)PlayerElement.ELEMENT_TYPE.FIRE)
                 {
                     child.SetActive(true);
                     Invoke(nameof(setInActive), timeToVanish);

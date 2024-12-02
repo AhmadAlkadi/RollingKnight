@@ -15,6 +15,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngineInternal;
 
@@ -34,7 +35,8 @@ public class TurretBullet : MonoBehaviour
     private CircleCollider2D circleCollider;
     private GameObject parentObject;
     private GameObject player;
-
+    private enum GUN_TYPE { NORMAL, ICE, FLAME };
+    private GUN_TYPE currentGunType = GUN_TYPE.NORMAL;
 
     public void setPlayer(ref GameObject newPlayer)
     {
@@ -168,11 +170,23 @@ public class TurretBullet : MonoBehaviour
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        currentGunType = GUN_TYPE.FLAME;
     }
 
     public void setActivateIce()
     {
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        currentGunType = GUN_TYPE.ICE;
+    }
+
+    public bool isFire()
+    {
+        return currentGunType == GUN_TYPE.FLAME;
+    }
+
+    public bool isIce()
+    {
+        return currentGunType == GUN_TYPE.ICE;
     }
 }

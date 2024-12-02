@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Freezing : MonoBehaviour
+public class ElementEffect : MonoBehaviour
 {
     public float timeToVanish = 5.0f;
     Rigidbody2D m_Rigidbody;
@@ -23,7 +23,7 @@ public class Freezing : MonoBehaviour
         {
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
-            if(collision.gameObject.name == "HitBox")
+            if(collision.gameObject.CompareTag("PlayerAttackBox"))
             {
                 currentElement = collision.gameObject.transform.parent.GetComponent<PlayerElement>();
             }
@@ -46,8 +46,6 @@ public class Freezing : MonoBehaviour
                     m_Rigidbody = gameObject.GetComponentInParent<Rigidbody2D>();
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    if(gameObject.transform.GetChild(3) != null)
-                        gameObject.transform.GetChild(3).gameObject.SetActive(false);
                     child.SetActive(true);
                 }
             }
@@ -58,25 +56,21 @@ public class Freezing : MonoBehaviour
             GameObject child = gameObject.transform.GetChild(0).gameObject;
             PlayerElement currentElement = collision.gameObject.GetComponent<PlayerElement>();
             TurretBullet TurrentElemnt = collision.gameObject.GetComponent<TurretBullet>();
-
+            var colliderMain = gameObject.GetComponentInParent<Collider2D>();
+            colliderMain.isTrigger = false;
+            
             if (TurrentElemnt != null)
             {
-                child.SetActive(true);
-            }
-            if (currentElement != null)
-            {
-                if (currentElement.GetIntELEMENT_TYPE() == 1) // Fire
+                if (TurrentElemnt.isFire() == true) // Fire
                 {
                     gameObject.transform.GetChild(1).gameObject.SetActive(true);
                     Invoke(nameof(setInActive), timeToVanish);
                 }
-                else if (currentElement.GetIntELEMENT_TYPE() == 2) // Ice
+                else if (TurrentElemnt.isIce() == true) // Ice
                 {
                     m_Rigidbody = gameObject.GetComponentInParent<Rigidbody2D>();
                     m_Rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    if (gameObject.transform.GetChild(3) != null)
-                        gameObject.transform.GetChild(3).gameObject.SetActive(false);
                     child.SetActive(true);
                 }
             }

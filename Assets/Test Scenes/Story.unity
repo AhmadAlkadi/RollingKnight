@@ -301,6 +301,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1550528838}
+  - {fileID: 1329945998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -308,6 +309,99 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1329945997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1329945998}
+  - component: {fileID: 1329946000}
+  - component: {fileID: 1329945999}
+  - component: {fileID: 1329946001}
+  m_Layer: 5
+  m_Name: Enter to Exit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1329945998
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329945997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1316404620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 359, y: -217}
+  m_SizeDelta: {x: 160, y: 40}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1329945999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329945997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Press 'Enter' \nTo Skip"
+--- !u!222 &1329946000
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329945997}
+  m_CullTransparentMesh: 1
+--- !u!114 &1329946001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329945997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f3931dbdecade4d87e887db9805a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadSceneName: Level_Intro
 --- !u!1 &1535500166
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,47 +613,47 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You wake up, your mind clouded and disoriented.
 
-    
 
-    
 
-    The
-    ground beneath you is cold and slick.
 
-    Water trickles down your face in
-    steady droplets, each one cold and sharp against your face.
 
-    
+    The ground beneath
+    you is cold and slick.
 
-    
+    Water trickles down your face in steady droplets,
+    each one cold and sharp against your face.
 
-    "Something
-    doesn''t feel right..."
 
-    
 
-    
 
-    You try to lift your arm but feel
-    something different about it. "Why does my arm feel limp and light?" You wondered
-    to yourself.
 
-    
+    "Something doesn''t feel
+    right..."
 
-    
 
-    As your regain your vision you notice that you
-    are inside a mysterious cave with specks of light throughout. Upon closer inspection
-    you also notice your body has taken another form entirely, to what it appears
-    to be a ball of yarn?
 
-    
 
-    
 
-    As much as you want to stay there gazing
-    at your new body you realize that there are more important matters to attend
-    to, such as figuring a way out of this ominous cave...'
+    You try to lift your arm but feel something different about
+    it. "Why does my arm feel limp and light?" You wondered to yourself.
+
+
+
+
+
+    As
+    your regain your vision you notice that you are inside a mysterious cave with
+    specks of light throughout. Upon closer inspection you also notice your body
+    has taken another form entirely, to what it appears to be a ball of yarn?
+
+
+
+
+
+    As
+    much as you want to stay there gazing at your new body you realize that there
+    are more important matters to attend to, such as figuring a way out of this ominous
+    cave...'
 --- !u!222 &1550528840
 CanvasRenderer:
   m_ObjectHideFlags: 0

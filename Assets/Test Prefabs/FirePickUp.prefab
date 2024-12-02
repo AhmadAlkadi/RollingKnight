@@ -4847,7 +4847,7 @@ GameObject:
   - component: {fileID: 8070460910549186522}
   m_Layer: 0
   m_Name: FirePickUp
-  m_TagString: Untagged
+  m_TagString: FirePickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

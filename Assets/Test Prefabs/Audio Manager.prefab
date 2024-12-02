@@ -138,6 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2414865186021236796}
+  - component: {fileID: 2752100353319169890}
   - component: {fileID: 655401813808984782}
   m_Layer: 0
   m_Name: Audio Manager
@@ -164,7 +165,7 @@ Transform:
   - {fileID: 3635087276230264811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &655401813808984782
+--- !u!114 &2752100353319169890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,6 +173,21 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941411121682832595}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c02a1bb7dcbf646ab84825f99446d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: 1
+  musicSource: {fileID: 8829227704139652031}
+  defaultMusic: {fileID: 8300000, guid: fb94328718cb01547b3f2c21b95fd8bf, type: 3}
+--- !u!114 &655401813808984782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941411121682832595}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae4cad2aa9124a458061d8c8ef0fdaf, type: 3}
   m_Name: 

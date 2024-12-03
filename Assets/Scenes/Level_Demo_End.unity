@@ -199,11 +199,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3420220779201739778, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -407
       objectReference: {fileID: 0}
     - target: {fileID: 3420220779201739778, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 3420220779201739778, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -315,11 +315,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6026289654469089324, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -447
       objectReference: {fileID: 0}
     - target: {fileID: 6026289654469089324, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 6026289654469089324, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -339,11 +339,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8141126639162169704, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -487
       objectReference: {fileID: 0}
     - target: {fileID: 8141126639162169704, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 8141126639162169704, guid: 6c270da08a2e592499574b4f86312d01, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5952,6 +5952,10 @@ PrefabInstance:
     - target: {fileID: 3795027541733317281, guid: 7e31f7b42ea2d1b4883cfeb3fda2e852, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020494215337694036, guid: 7e31f7b42ea2d1b4883cfeb3fda2e852, type: 3}
+      propertyPath: sceneLoadName
+      value: Level_Demo_End
       objectReference: {fileID: 0}
     - target: {fileID: 7695036067375486988, guid: 7e31f7b42ea2d1b4883cfeb3fda2e852, type: 3}
       propertyPath: m_Enabled

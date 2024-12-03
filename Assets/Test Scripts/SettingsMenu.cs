@@ -24,6 +24,8 @@ public class SettingsMenu : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             gameObject.transform.GetChild(1).gameObject.SetActive(true);
             gameObject.transform.GetChild(2).gameObject.SetActive(true);
+            gameObject.transform.GetChild(3).gameObject.SetActive(true);
+            gameObject.transform.GetChild(4).gameObject.SetActive(true);
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && activate == false)
         {
@@ -35,9 +37,11 @@ public class SettingsMenu : MonoBehaviour
     {
         activate = true;
         player.enabled = true;
-        Time.timeScale = 1.0f;
+
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
         gameObject.transform.GetChild(1).gameObject.SetActive(false);
-        gameObject.transform.GetChild(2).gameObject.SetActive(true);
+        gameObject.transform.GetChild(2).gameObject.SetActive(false);
+        gameObject.transform.GetChild(3).gameObject.SetActive(false);
+        gameObject.transform.GetChild(4).gameObject.SetActive(false);
     }
 }

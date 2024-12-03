@@ -18,7 +18,6 @@ public class Exit_End_Level : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Hello");
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             SceneManager.LoadScene(level);

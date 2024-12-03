@@ -19,7 +19,7 @@ public class MenuMove : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if (gameObject.transform.localPosition.y + step >= -7.92f)
+            if (gameObject.transform.localPosition.y + step >= -5.50f)
                 transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y - step, gameObject.transform.localPosition.z);
         }
     }

@@ -3,6 +3,7 @@ using UnityEngine.Rendering;
 
 public class SettingMenuMove : MonoBehaviour
 {
+    float move = 238.9338f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,11 +17,19 @@ public class SettingMenuMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.localPosition = new Vector3(gameObject.transform.localPosition.x, 236.9f, gameObject.transform.localPosition.z);
+            if (move <= 238.9338f)
+            {
+                move += 51.0f;
+                transform.localPosition = new Vector3(gameObject.transform.localPosition.x, move, gameObject.transform.localPosition.z);
+            }
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            transform.localPosition = new Vector3(gameObject.transform.localPosition.x, 187.8f, gameObject.transform.localPosition.z);
+            if (move >= 144.0f)
+            {
+                move -= 51.0f;
+                transform.localPosition = new Vector3(gameObject.transform.localPosition.x, move, gameObject.transform.localPosition.z);
+            }
         }
     }
 }

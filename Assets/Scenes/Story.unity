@@ -344,7 +344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359, y: -217}
+  m_AnchoredPosition: {x: 422, y: -246}
   m_SizeDelta: {x: 160, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329945999
@@ -401,7 +401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f3931dbdecade4d87e887db9805a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checker: 1
   loadSceneName: Level_Intro
+  time: 5
 --- !u!1 &1535500166
 GameObject:
   m_ObjectHideFlags: 0

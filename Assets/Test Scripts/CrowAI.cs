@@ -45,14 +45,16 @@ public class CrowAI : MonoBehaviour
 
         if(currentWaypoint >= path.vectorPath.Count) {
             reachedEndOfPath = true;
+            
             return;
         } else {
+            Debug.Log(currentWaypoint);
             reachedEndOfPath = false;
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
-
+        
         rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -60,6 +62,8 @@ public class CrowAI : MonoBehaviour
         if(distance < nextWaypointDistance) {
             currentWaypoint++;
         }
+
+        Debug.Log($"{gameObject.name} velocity after force: {rb.linearVelocity}");
 
         if(rb.linearVelocity.x >= 0.01f) {
             enemy.localScale = new Vector3(1f,1f,1f);

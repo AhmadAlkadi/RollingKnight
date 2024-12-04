@@ -16,15 +16,6 @@ public static class Extensions
         offset.y = offset_y;
 
         RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position + offset, radius, direction.normalized, distance, layerMask);
-
-
-        //Debug.Log("rigidbody.position: " + rigidbody.position);
-        //Debug.Log("direction: " + direction);
-        //Debug.Log("radius: " + radius);
-        //Debug.Log("distance: " + distance);
-        //Debug.Log("hit: " + (hit.collider != null && hit.rigidbody != rigidbody).ToString());
-
-
         return (hit.collider != null && hit.rigidbody != rigidbody);
     }
 

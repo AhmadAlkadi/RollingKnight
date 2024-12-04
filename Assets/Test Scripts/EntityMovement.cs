@@ -5,8 +5,8 @@ public class EntityMovement : MonoBehaviour
 {
     public float speed = 1f;
     public Vector2 direction = Vector2.left;
-    public float castRadius = 0.25f;
-    public float castDistance = 1.57f;
+    public float castRadius = 3f;
+    public float castDistance = 1.2f;
 
     private Rigidbody2D rb;
     private Vector2 velocity;
@@ -44,6 +44,15 @@ public class EntityMovement : MonoBehaviour
         velocity.y += Physics2D.gravity.y * Time.fixedDeltaTime;
 
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+
+        // // Draw the forward ray
+        // Vector2 forwardStart = rb.position;
+        // Vector2 forwardEnd = forwardStart + direction.normalized * castDistance;
+        // Debug.DrawLine(forwardStart, forwardEnd, Color.red);
+        // // Draw the downward ray
+        // Vector2 downwardStart = rb.position;
+        // Vector2 downwardEnd = downwardStart + Vector2.down * castDistance;
+        // Debug.DrawLine(downwardStart, downwardEnd, Color.blue);
 
         if (rb.Raycast(direction, castRadius, castDistance, 0.0f, 0.0f)) {
             direction = -direction;

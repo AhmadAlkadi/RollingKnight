@@ -22,7 +22,7 @@ public class WizardFrozenBall : MonoBehaviour
 
         Debug.Log(transform.position);
 
-        if (distance < 10) {
+        if (distance < 20) {
             timer += Time.deltaTime;
 
 

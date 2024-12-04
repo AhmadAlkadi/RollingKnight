@@ -53,6 +53,12 @@ public class CrowAI : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+
+        // Detect if the player is higher and the wizard is blocked
+        if (target.position.y > rb.position.y) {
+            direction.y = 1f; // Prioritize upward movement
+        }
+        
         Vector2 force = direction * speed * Time.deltaTime;
         
         rb.AddForce(force);

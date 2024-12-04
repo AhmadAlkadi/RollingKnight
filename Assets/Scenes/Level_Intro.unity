@@ -9402,7 +9402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2815fbfae58f04c4985aa7f678ea80a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: Level_Tower
+  loadScene: Level_Tower_V2
 --- !u!1 &1399219962
 GameObject:
   m_ObjectHideFlags: 0

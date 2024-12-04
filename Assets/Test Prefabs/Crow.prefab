@@ -430,3 +430,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crowAnimator: {fileID: 4778516110391536}
   attackInterval: 8
+  enableDebugLog: 0

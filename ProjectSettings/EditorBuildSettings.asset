@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_Tower.unity
     guid: dbf0f6c428e49074eb4999563e24a396
   - enabled: 1
+    path: Assets/Scenes/Level_Tower_V2.unity
+    guid: bbb5f6e2eccbe304cbd454265d1db63b
+  - enabled: 1
     path: Assets/Scenes/Level_Intro.unity
     guid: cc8af2b5f64184b4a81e4cae285e5f2d
   - enabled: 1
@@ -20,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story.unity
     guid: 956b1da83473bcc45836eb25cdba9ede
+  - enabled: 1
+    path: Assets/Scenes/Level_Story_V2.unity
+    guid: f3b3440ee576beb479ceeb97e37249cd
   - enabled: 0
     path: Assets/Test Scenes/Ball_Movement_Scene.unity
     guid: ea3b5cb3009103443aec86c1dbae020c

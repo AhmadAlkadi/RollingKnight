@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class VolumeChange : MonoBehaviour
 {
     public MusicManager manageVolume;
+    public MainMenuMusic mainMenuVolume;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,7 @@ public class VolumeChange : MonoBehaviour
             if (manageVolume.volume < 1.0f)
             {
                 manageVolume.SetVolume(manageVolume.volume + 0.1f);
+                mainMenuVolume.SetVolume(manageVolume.volume + 0.1f);
                 volumeSlider.value += 0.1f;
             }
 
@@ -28,6 +31,7 @@ public class VolumeChange : MonoBehaviour
             if (manageVolume.volume > 0.0f)
             {
                 manageVolume.SetVolume(manageVolume.volume - 0.1f);
+                mainMenuVolume.SetVolume(manageVolume.volume + 0.1f);
                 volumeSlider.value -= 0.1f;
             }
 

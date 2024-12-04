@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayStart : MonoBehaviour
 {
+    public MusicManager musicManager;
+    public MainMenuMusic mainMenuMusic;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +20,8 @@ public class PlayStart : MonoBehaviour
 
     private void Die()
     {
+        musicManager.gameObject.SetActive(true);
+        mainMenuMusic.gameObject.SetActive(false);
         SceneManager.LoadScene("Story");
     }
 }

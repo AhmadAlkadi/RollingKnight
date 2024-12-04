@@ -21,8 +21,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
             Invoke(nameof(allowExit), time);
             runInvoke = true;
         }
-        if(Input.GetKeyDown(KeyCode.Return) && checker)
+
+        if (Input.GetKeyDown(KeyCode.Return) && checker)
+        {
             SceneManager.LoadScene(loadSceneName);
+        }
     }
 
     public void allowExit()

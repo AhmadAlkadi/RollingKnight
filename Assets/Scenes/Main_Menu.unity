@@ -627,6 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicManager: {fileID: 1913753052}
   mainMenuMusic: {fileID: 478534645}
+  loadLevel: Level_Story_V2
 --- !u!1 &478534642
 GameObject:
   m_ObjectHideFlags: 0

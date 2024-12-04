@@ -5,6 +5,7 @@ public class PlayStart : MonoBehaviour
 {
     public MusicManager musicManager;
     public MainMenuMusic mainMenuMusic;
+    public string loadLevel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,6 +23,6 @@ public class PlayStart : MonoBehaviour
     {
         musicManager.gameObject.SetActive(true);
         mainMenuMusic.gameObject.SetActive(false);
-        SceneManager.LoadScene("Story");
+        SceneManager.LoadScene(loadLevel);
     }
 }

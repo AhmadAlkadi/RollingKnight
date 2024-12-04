@@ -48,7 +48,7 @@ public class CrowAI : MonoBehaviour
             
             return;
         } else {
-            Debug.Log(currentWaypoint);
+            //Debug.Log(currentWaypoint);
             reachedEndOfPath = false;
         }
 
@@ -69,7 +69,7 @@ public class CrowAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        Debug.Log($"{gameObject.name} velocity after force: {rb.linearVelocity}");
+        //Debug.Log($"{gameObject.name} velocity after force: {rb.linearVelocity}");
 
         if(rb.linearVelocity.x >= 0.01f) {
             enemy.localScale = new Vector3(1f,1f,1f);

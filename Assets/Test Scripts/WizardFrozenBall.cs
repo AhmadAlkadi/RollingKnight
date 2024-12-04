@@ -20,7 +20,7 @@ public class WizardFrozenBall : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        Debug.Log(transform.position);
+        //Debug.Log(transform.position);
 
         if (distance < 20) {
             timer += Time.deltaTime;

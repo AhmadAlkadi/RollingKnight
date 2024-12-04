@@ -11,9 +11,12 @@ public class EntityMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 velocity;
 
+    private Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         enabled = false;
     }
 
@@ -44,6 +47,9 @@ public class EntityMovement : MonoBehaviour
         velocity.y += Physics2D.gravity.y * Time.fixedDeltaTime;
 
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+
+        // Trigger walking animation if moving
+        animator.SetBool("isWalking", velocity.x != 0);
 
         // // Draw the forward ray
         // Vector2 forwardStart = rb.position;

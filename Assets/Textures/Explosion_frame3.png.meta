@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e958610de586594409a05b539aaf830e
+guid: 410f4718816be4b41878d58b249f4e61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8645154754116224514
-    second: Explosion_frame2_0
-  - first:
-      213: -3373273531141214214
-    second: Explosion_frame2_1
+      213: -6999941850125377333
+    second: Explosion_frame3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explosion_frame2_0
+      name: Explosion_frame3_0
       rect:
         serializedVersion: 2
-        x: 109
-        y: 125
-        width: 859
-        height: 744
+        x: 33
+        y: 138
+        width: 983
+        height: 754
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef97f9c1e8d360880800000000000000
-      internalID: -8645154754116224514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explosion_frame2_1
-      rect:
-        serializedVersion: 2
-        x: 688
-        y: 23
-        width: 122
-        height: 133
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: affa9168899bf21d0800000000000000
-      internalID: -3373273531141214214
+      spriteID: bc0e2ee79f53bde90800000000000000
+      internalID: -6999941850125377333
       vertices: []
       indices: 
       edges: []
@@ -160,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Explosion_frame2_0: -8645154754116224514
-      Explosion_frame2_1: -3373273531141214214
+      Explosion_frame3_0: -6999941850125377333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
